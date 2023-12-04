@@ -10,5 +10,5 @@
   <picture xsi:type="core:PictureRef">
     <picture>CommonPicture.граф_ИконкаПодсистемы</picture>
   </picture>
-  <content>Catalog.граф_ЭлементыДизайнаГрафа</content>
+  <content>Catalog.граф_ЭлементыГрафа</content>
 </mdclass:Subsystem>
