@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="5fd3e96c-7b52-4196-9a8b-f0a0afee9b46">
+  <name>ОтображениеГрафов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отображение графов</value>
+  </synonym>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:ConfigurationExtension">
+    <defaultRunMode>Checked</defaultRunMode>
+    <usePurposes>Checked</usePurposes>
+    <commandInterface>Extended</commandInterface>
+    <defaultLanguage>Checked</defaultLanguage>
+    <interfaceCompatibilityMode>Checked</interfaceCompatibilityMode>
+    <compatibilityMode>Checked</compatibilityMode>
+    <defaultStyle>Extended</defaultStyle>
+    <defaultRoles>Extended</defaultRoles>
+  </extension>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="8634d547-f2d6-4f62-a9a8-b84a21f9449f"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="37e57740-c11a-4792-9683-fe7e385a5fc6"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="42a38776-63fc-461e-8a25-d9e8ad38d6b7"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="fc4a4614-4467-4ff7-b2f3-ae633cc15e53"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="2e84d26a-d5bb-495e-92b4-f0bfcb65c392"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="d783e632-6340-4364-91ec-e531e1346833"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="f7b1f0f1-cdd5-409b-9313-c9d4e45de9d7"/>
+  <keepMappingToExtendedConfigurationObjectsByIDs>true</keepMappingToExtendedConfigurationObjectsByIDs>
+  <namePrefix>граф_</namePrefix>
+  <configurationExtensionCompatibilityMode>8.3.21</configurationExtensionCompatibilityMode>
+  <configurationExtensionPurpose>Customization</configurationExtensionPurpose>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <scriptVariant>Russian</scriptVariant>
+  <defaultRoles>Role.граф_ОсновнаяРоль</defaultRoles>
+  <defaultLanguage>Language.Русский</defaultLanguage>
+  <interfaceCompatibilityMode>TaxiEnableVersion8_2</interfaceCompatibilityMode>
+  <compatibilityMode>8.3.21</compatibilityMode>
+  <languages uuid="96d52c39-91a2-4a63-a7cb-17e698232174">
+    <name>Русский</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:LanguageExtension">
+      <languageCode>Checked</languageCode>
+    </extension>
+    <languageCode>ru</languageCode>
+  </languages>
+  <subsystems>Subsystem.граф_ОтображениеГрафов</subsystems>
+  <commonPictures>CommonPicture.граф_ИконкаПодсистемы</commonPictures>
+  <roles>Role.граф_ОсновнаяРоль</roles>
+  <commonTemplates>CommonTemplate.граф_БиблиотекаG6Версия4</commonTemplates>
+  <commonTemplates>CommonTemplate.граф_ШаблонHTML</commonTemplates>
+  <commonTemplates>CommonTemplate.граф_МакетДемо1</commonTemplates>
+  <commonTemplates>CommonTemplate.граф_СкриптИнициализацииГрафа</commonTemplates>
+  <commonTemplates>CommonTemplate.граф_НовоеРебро</commonTemplates>
+  <catalogs>Catalog.граф_ЭлементыДизайнаГрафа</catalogs>
+</mdclass:Configuration>

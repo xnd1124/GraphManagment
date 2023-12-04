@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Просмотр графа</title>
+  </head>
+  <body>
+    <div id="mountNode"></div>
+	<script>
+    	//содержимое библиотеки
+    	//данные графа
+    	//инициализация графа
+    </script>
+  </body>
+</html>

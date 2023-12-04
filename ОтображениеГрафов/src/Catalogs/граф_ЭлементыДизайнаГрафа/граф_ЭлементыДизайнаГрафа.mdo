@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="433b341f-474f-4799-af39-262a41c3661b">
+  <producedTypes>
+    <objectType typeId="595f162a-0a5c-4b5f-97a0-477448f960b4" valueTypeId="be263230-7fee-4060-85ac-53b00712d9be"/>
+    <refType typeId="9c034a8f-20fd-4dc3-b177-3526ccb2c6a6" valueTypeId="220034da-3174-4325-9ddd-f587d9b23096"/>
+    <selectionType typeId="28106502-c979-4383-84d7-a3f8cde325a7" valueTypeId="bc0d19b5-bd75-4fa3-b3f9-b88cb6218919"/>
+    <listType typeId="7a94dc8f-8fed-4359-8e42-433cd23a0abb" valueTypeId="13eb6be0-05ba-4652-b9d0-e8bb3f584f13"/>
+    <managerType typeId="2dfe4188-d7a8-44d9-afcc-b576e65e085a" valueTypeId="c7ace595-785e-4ef5-a4d1-5c2bf37fb4b6"/>
+  </producedTypes>
+  <name>граф_ЭлементыДизайнаГрафа</name>
+  <synonym>
+    <key>ru</key>
+    <value>Элементы дизайна графа</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.граф_ЭлементыДизайнаГрафа.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.граф_ЭлементыДизайнаГрафа.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Элемент дизайна графа</value>
+  </objectPresentation>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.граф_ЭлементыДизайнаГрафа.Form.ФормаЭлемента</defaultObjectForm>
+  <forms uuid="944dec57-012e-4d5d-8378-324a796b8f73">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

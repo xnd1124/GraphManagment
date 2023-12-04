@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tutorial Demo</title>
+  </head>
+  <body>
+  <div id="mountNode"></div>
+    <script>
+    //содержимое библиотеки 
+      
+     //данные графа
+    
+                             
+    //инициализация графа
+
+    </script>
+  </body>
+</html>
