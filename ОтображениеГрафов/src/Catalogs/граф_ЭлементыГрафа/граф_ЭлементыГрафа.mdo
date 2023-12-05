@@ -159,4 +159,16 @@
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
   </forms>
+  <templates uuid="886a7e72-bba6-4188-ab8e-b0fbb5bfcbaa">
+    <name>ШаблонРеброПоУмолчанию</name>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="d73d493c-95d4-4075-ba71-00c8610de1f2">
+    <name>ШаблонВершинаПоУмолчанию</name>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="4621339a-a2e7-4024-90c7-93f2fc4a9613">
+    <name>ШаблонКонтейнерПоУмолчанию</name>
+    <templateType>TextDocument</templateType>
+  </templates>
 </mdclass:Catalog>

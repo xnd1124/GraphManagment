@@ -26,4 +26,11 @@
       <value>Ребро</value>
     </synonym>
   </enumValues>
+  <enumValues uuid="1a5b9e3b-ecca-4edc-9df0-1639d86909a0">
+    <name>Контейнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контейнер</value>
+    </synonym>
+  </enumValues>
 </mdclass:Enum>

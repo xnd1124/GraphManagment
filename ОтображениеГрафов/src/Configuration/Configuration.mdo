@@ -49,8 +49,6 @@
   <commonTemplates>CommonTemplate.граф_БиблиотекаG6Версия4</commonTemplates>
   <commonTemplates>CommonTemplate.граф_ШаблонHTML</commonTemplates>
   <commonTemplates>CommonTemplate.граф_СкриптИнициализацииГрафа</commonTemplates>
-  <commonTemplates>CommonTemplate.граф_ШаблонРеброПоУмолчанию</commonTemplates>
-  <commonTemplates>CommonTemplate.граф_ШаблонВершинаПоУмолчанию</commonTemplates>
   <catalogs>Catalog.граф_ЭлементыГрафа</catalogs>
   <enums>Enum.граф_ТипЭлементаГрафа</enums>
 </mdclass:Configuration>
