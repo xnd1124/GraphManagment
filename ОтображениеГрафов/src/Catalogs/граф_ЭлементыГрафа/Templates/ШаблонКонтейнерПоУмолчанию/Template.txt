@@ -1,0 +1,19 @@
+const data = {
+  nodes: [
+    {
+      id: 'Узел1',
+      comboId: 'Контейнер1' // node1 belongs to comboA
+    },
+    
+  ],
+  
+  combos: [
+    { 
+      id: 'Контейнер1',
+      label: 'Имя контейнера',
+      //свойства объекта 
+    },
+     ]
+};
+
+
