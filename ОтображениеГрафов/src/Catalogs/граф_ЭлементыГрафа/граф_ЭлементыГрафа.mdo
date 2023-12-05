@@ -171,4 +171,12 @@
     <name>ШаблонКонтейнерПоУмолчанию</name>
     <templateType>TextDocument</templateType>
   </templates>
+  <templates uuid="ceb3bd17-6a27-4b26-a155-081b770da64e">
+    <name>JSONEditor</name>
+    <synonym>
+      <key>ru</key>
+      <value>JSONEditor</value>
+    </synonym>
+    <templateType>BinaryData</templateType>
+  </templates>
 </mdclass:Catalog>

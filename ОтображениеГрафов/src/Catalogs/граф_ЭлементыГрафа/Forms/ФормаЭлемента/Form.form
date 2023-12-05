@@ -165,23 +165,19 @@
         </extInfo>
       </items>
       <items xsi:type="form:FormField">
-        <name>ОписаниеЭлементаJSON</name>
-        <id>19</id>
+        <name>JSONHTML</name>
+        <id>28</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
           <common>true</common>
         </userVisible>
         <dataPath xsi:type="form:DataPath">
-          <segments>Объект.ОписаниеЭлементаJSON</segments>
+          <segments>JSONHTML</segments>
         </dataPath>
-        <handlers>
-          <event>OnChange</event>
-          <name>ОписаниеЭлементаJSONПриИзменении</name>
-        </handlers>
         <extendedTooltip>
-          <name>ОписаниеЭлементаJSONРасширеннаяПодсказка</name>
-          <id>21</id>
+          <name>JSONHTMLРасширеннаяПодсказка</name>
+          <id>30</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -195,8 +191,8 @@
           </extInfo>
         </extendedTooltip>
         <contextMenu>
-          <name>ОписаниеЭлементаJSONКонтекстноеМеню</name>
-          <id>20</id>
+          <name>JSONHTMLКонтекстноеМеню</name>
+          <id>29</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -204,18 +200,26 @@
           </userVisible>
           <autoFill>true</autoFill>
         </contextMenu>
-        <type>InputField</type>
+        <type>HTMLDocumentField</type>
         <editMode>Enter</editMode>
         <showInHeader>true</showInHeader>
         <headerHorizontalAlign>Left</headerHorizontalAlign>
         <showInFooter>true</showInFooter>
-        <extInfo xsi:type="form:InputFieldExtInfo">
+        <extInfo xsi:type="form:HtmlFieldExtInfo">
+          <handlers>
+            <event>DocumentComplete</event>
+            <name>JSONHTMLДокументСформирован</name>
+          </handlers>
+          <handlers>
+            <event>OnClick</event>
+            <name>JSONHTMLПриНажатии</name>
+          </handlers>
+          <width>50</width>
+          <autoMaxWidth>true</autoMaxWidth>
+          <height>10</height>
           <autoMaxHeight>true</autoMaxHeight>
-          <wrap>true</wrap>
-          <multiLine>true</multiLine>
-          <chooseType>true</chooseType>
-          <typeDomainEnabled>true</typeDomainEnabled>
-          <textEdit>true</textEdit>
+          <horizontalStretch>true</horizontalStretch>
+          <verticalStretch>true</verticalStretch>
         </extInfo>
       </items>
       <visible>true</visible>
@@ -500,6 +504,24 @@
       <value>Кешированный текст типа элемента</value>
     </title>
     <id>6</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>JSONHTML</name>
+    <title>
+      <key>ru</key>
+      <value>Описание в формате JSON</value>
+    </title>
+    <id>9</id>
     <valueType>
       <types>String</types>
       <stringQualifiers/>
