@@ -64,6 +64,16 @@
 	"Узел1" КАК УзелИсточник,
 	"Узел2" КАК УзелПриемник</query>
 	</dataSet>
+	<calculatedField>
+		<dataPath>ЭтоСвязь	</dataPath>
+		<expression>Истина</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Это связь</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -112,6 +122,11 @@
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
 						<dcsset:field>УзелПриемник</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>[ЭтоСвязь	]</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 					</dcsset:item>
