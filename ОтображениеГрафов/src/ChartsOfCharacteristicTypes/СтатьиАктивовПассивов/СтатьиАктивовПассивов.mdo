@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfCharacteristicTypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="e9c97f99-6e19-4b06-98d3-53656aef8a48" extendedConfigurationObject="cf04f485-5792-4993-80a9-fe14d4b80320">
+  <producedTypes>
+    <objectType typeId="f4aae892-2a20-4a79-a9ec-21a0fccd18e8" valueTypeId="ae749808-cc16-4ee8-952f-84faefb34ec4"/>
+    <refType typeId="c0b923c4-a17c-478b-b684-04b234f18b7f" valueTypeId="bef14f76-2163-470d-917e-ab0b18405066"/>
+    <selectionType typeId="d47eb7fb-beeb-4ade-9e96-51cfae964b6b" valueTypeId="118c09e7-ead2-4840-9ce3-2c86d2d272b8"/>
+    <listType typeId="66b4a7e5-cc43-4ceb-a784-3622bc654a05" valueTypeId="dcf1c6d1-54ff-490a-85f8-a46b40e100fd"/>
+    <managerType typeId="b33190ab-d27d-4619-9047-ab620567368e" valueTypeId="30ef3a01-cfb6-4286-bd70-231e194d97f3"/>
+    <containerType typeId="3b7107ab-8da6-4823-98c2-7e8251cfbde1" valueTypeId="eba36a92-2ac1-43f9-95d1-e2cab607359a"/>
+  </producedTypes>
+  <name>СтатьиАктивовПассивов</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:ChartOfCharacteristicTypesExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+    <typeExtension/>
+  </extension>
+  <useStandardCommands>true</useStandardCommands>
+  <attributes uuid="01f958cf-2733-4074-b4bd-9a11093cb0b0" extendedConfigurationObject="fb88be3a-9fd7-43fb-a47b-7b88e6a5848e">
+    <name>АктивПассив</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>EnumRef.ВидыСтатейУправленческогоБаланса</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </attributes>
+</mdclass:ChartOfCharacteristicTypes>

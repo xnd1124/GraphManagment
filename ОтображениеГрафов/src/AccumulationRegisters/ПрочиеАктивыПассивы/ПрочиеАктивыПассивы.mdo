@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="a71367d1-ca57-4037-8d49-747cabde11c5" extendedConfigurationObject="42996714-5d3e-477b-bac8-dbe4c962ca7b">
+  <producedTypes>
+    <selectionType typeId="1ae97251-5528-450d-a9a3-2ea8bdbc0eb6" valueTypeId="ab1acc5e-26a7-4095-b745-27e74457372d"/>
+    <listType typeId="775e8dc6-e630-43fd-87fa-3033fb63b7a3" valueTypeId="94fb3c3b-23e3-40f2-ab7c-3fdb76a27898"/>
+    <managerType typeId="02e3baea-f84a-4f7e-97ca-689f31e0dc37" valueTypeId="e7a730d1-55a2-42ef-bf24-b918fde2a438"/>
+    <recordSetType typeId="c8a117a5-7f0c-4528-85df-2f4a682ad808" valueTypeId="b4e4727e-09fc-4a8c-a838-d10a27a85d29"/>
+    <recordKeyType typeId="1eb4bf03-0648-4d0e-aba7-747d3078d6aa" valueTypeId="beb71bb0-02c0-4c32-be9d-36bca63996a8"/>
+    <recordType typeId="0e17c771-04a1-445c-9669-8715e745d168" valueTypeId="aca2665a-e35e-4821-b994-8d0d4706e81b"/>
+  </producedTypes>
+  <name>ПрочиеАктивыПассивы</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:AccumulationRegisterExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+    <registerType>Checked</registerType>
+  </extension>
+  <useStandardCommands>true</useStandardCommands>
+  <resources uuid="3e379c80-9f41-4a92-9c42-8930e2e2cc77" extendedConfigurationObject="a7e8b6fa-105b-44a4-b768-45cd09780f8b">
+    <name>Сумма</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>DefinedType.ДенежнаяСуммаЛюбогоЗнака</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </resources>
+  <dimensions uuid="b0b6af84-9f94-4208-abd8-b0ae69b6cd11" extendedConfigurationObject="b8178d82-6454-4e17-b6a0-8e1ea1452b19">
+    <name>Статья</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>ChartOfCharacteristicTypesRef.СтатьиАктивовПассивов</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+</mdclass:AccumulationRegister>

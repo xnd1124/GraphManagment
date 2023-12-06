@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="433b341f-474f-4799-af39-262a41c3661b">
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="90284932-cb1c-4927-8564-ba2f7f463ae0">
   <producedTypes>
-    <objectType typeId="595f162a-0a5c-4b5f-97a0-477448f960b4" valueTypeId="be263230-7fee-4060-85ac-53b00712d9be"/>
-    <refType typeId="9c034a8f-20fd-4dc3-b177-3526ccb2c6a6" valueTypeId="220034da-3174-4325-9ddd-f587d9b23096"/>
-    <selectionType typeId="28106502-c979-4383-84d7-a3f8cde325a7" valueTypeId="bc0d19b5-bd75-4fa3-b3f9-b88cb6218919"/>
-    <listType typeId="7a94dc8f-8fed-4359-8e42-433cd23a0abb" valueTypeId="13eb6be0-05ba-4652-b9d0-e8bb3f584f13"/>
-    <managerType typeId="2dfe4188-d7a8-44d9-afcc-b576e65e085a" valueTypeId="c7ace595-785e-4ef5-a4d1-5c2bf37fb4b6"/>
+    <objectType typeId="265dfd47-3bc5-400b-8a06-e2f83a886474" valueTypeId="f5b7a30a-6fc8-43be-ac82-52a5609f86db"/>
+    <refType typeId="f9b39b22-45b4-45d8-9ebd-81d17bc0c497" valueTypeId="86584964-423c-49d4-a83e-8b699b0ec2f0"/>
+    <selectionType typeId="4aa7fa46-79eb-401a-9e13-78107d25881d" valueTypeId="1d57d9c1-5224-4258-ad5a-defa35d8b209"/>
+    <listType typeId="d97d8ce4-72b2-4d92-b503-3bc41b35e1ad" valueTypeId="0c847566-5a92-49de-8078-54481d9af474"/>
+    <managerType typeId="a4470444-0761-424b-bba4-7f21dca9c108" valueTypeId="157ff91b-b9e3-4929-9137-e6e210e10e80"/>
   </producedTypes>
-  <name>граф_ЭлементыГрафа</name>
+  <name>граф_ИсточникиДанныхГрафов</name>
   <synonym>
     <key>ru</key>
-    <value>Элементы графа</value>
+    <value>Источники данных графов</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
-  <inputByString>Catalog.граф_ЭлементыГрафа.StandardAttribute.Code</inputByString>
-  <inputByString>Catalog.граф_ЭлементыГрафа.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.граф_ИсточникиДанныхГрафов.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.граф_ИсточникиДанныхГрафов.StandardAttribute.Description</inputByString>
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <standardAttributes>
     <dataHistory>Use</dataHistory>
@@ -68,7 +68,7 @@
     <name>Parent</name>
     <synonym>
       <key>ru</key>
-      <value>Группа элементов</value>
+      <value>Группа источников</value>
     </synonym>
     <fillFromFillingValue>true</fillFromFillingValue>
     <fillValue xsi:type="core:UndefinedValue"/>
@@ -88,12 +88,7 @@
   <standardAttributes>
     <dataHistory>Use</dataHistory>
     <name>Code</name>
-    <synonym>
-      <key>ru</key>
-      <value>Идентификатор</value>
-    </synonym>
     <fillValue xsi:type="core:UndefinedValue"/>
-    <fillChecking>ShowError</fillChecking>
     <fullTextSearch>Use</fullTextSearch>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
@@ -102,47 +97,32 @@
   <fullTextSearch>Use</fullTextSearch>
   <objectPresentation>
     <key>ru</key>
-    <value>Элемент дизайна графа</value>
+    <value>Источник данных графа</value>
   </objectPresentation>
   <hierarchical>true</hierarchical>
   <levelCount>2</levelCount>
   <foldersOnTop>true</foldersOnTop>
-  <codeLength>50</codeLength>
-  <descriptionLength>100</descriptionLength>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
   <codeType>String</codeType>
   <codeAllowedLength>Variable</codeAllowedLength>
   <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
   <defaultPresentation>AsDescription</defaultPresentation>
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
-  <defaultObjectForm>Catalog.граф_ЭлементыГрафа.Form.ФормаЭлемента</defaultObjectForm>
-  <attributes uuid="bc391fc2-8e51-47c9-8495-c5f16729c804">
-    <name>ТипЭлемента</name>
+  <defaultObjectForm>Catalog.граф_ИсточникиДанныхГрафов.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="e1a75252-1366-49e7-9b90-8e364cb313d0">
+    <name>ИмяШаблонаСКД</name>
     <synonym>
       <key>ru</key>
-      <value>Тип элемента</value>
-    </synonym>
-    <type>
-      <types>EnumRef.граф_ТипЭлементаГрафа</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillChecking>ShowError</fillChecking>
-    <fillValue xsi:type="core:ReferenceValue">
-      <value>Enum.граф_ТипЭлементаГрафа.EnumValue.Вершина</value>
-    </fillValue>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="bcb058aa-ab44-446c-9bbe-8d23f9300752">
-    <name>ОписаниеЭлементаJSON</name>
-    <synonym>
-      <key>ru</key>
-      <value>Описание элемента в формате JSON</value>
+      <value>Имя шаблона СКД</value>
     </synonym>
     <type>
       <types>String</types>
-      <stringQualifiers/>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
@@ -150,7 +130,49 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <forms uuid="944dec57-012e-4d5d-8378-324a796b8f73">
+  <attributes uuid="eeb368ff-bc44-4ae0-b345-a0df2207abec">
+    <name>ХранилищеНастроекКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Хранилище настроек компоновки данных</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8c49b210-b5d8-46cd-8eb1-97d1f8aab24c">
+    <name>ХранилищеСхемыКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Хранилище схемы компоновки данных</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Storage of data composition schema</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Произвольная схема компоновки данных для получения значений цен номенклатуры</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Arbitrary data composition schema for obtaining values of item prices</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="129c5947-d09f-4427-8eab-539c238fcc80">
     <name>ФормаЭлемента</name>
     <synonym>
       <key>ru</key>
@@ -159,24 +181,20 @@
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
   </forms>
-  <templates uuid="886a7e72-bba6-4188-ab8e-b0fbb5bfcbaa">
-    <name>ШаблонРеброПоУмолчанию</name>
-    <templateType>TextDocument</templateType>
-  </templates>
-  <templates uuid="d73d493c-95d4-4075-ba71-00c8610de1f2">
-    <name>ШаблонВершинаПоУмолчанию</name>
-    <templateType>TextDocument</templateType>
-  </templates>
-  <templates uuid="4621339a-a2e7-4024-90c7-93f2fc4a9613">
-    <name>ШаблонКонтейнерПоУмолчанию</name>
-    <templateType>TextDocument</templateType>
-  </templates>
-  <templates uuid="ceb3bd17-6a27-4b26-a155-081b770da64e">
-    <name>JSONEditor</name>
+  <templates uuid="ab044fb6-54db-407a-bccb-9ef6d5d76630">
+    <name>ОсновнаяСхема</name>
     <synonym>
       <key>ru</key>
-      <value>JSONEditor</value>
+      <value>Демонстрационная схема</value>
     </synonym>
-    <templateType>BinaryData</templateType>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="e06e6c02-a773-4ab1-b59d-01260f558036">
+    <name>АктивыПассивы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Активы пассивы</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
   </templates>
 </mdclass:Catalog>

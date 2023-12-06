@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="c4344fdb-c768-49b9-967f-b94b126991dd" extendedConfigurationObject="351b0c5b-74c3-4aaa-a93b-7246b941f797">
+  <producedTypes>
+    <refType typeId="a9954e82-5084-4f8b-a652-1d2ec785dedc" valueTypeId="5b0d07c3-857c-490a-9ac5-f08ae73867e9"/>
+    <listType typeId="e2f0200a-ab45-4b71-836c-867c351f4abf" valueTypeId="31e87182-d862-41aa-8b9e-853ca496cdcc"/>
+    <managerType typeId="ae20e86c-2eab-4e7a-baac-0ac6df34c43f" valueTypeId="7afc36cb-a09c-4b12-879c-d171a04bdd83"/>
+  </producedTypes>
+  <name>ХозяйственныеОперации</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:EnumExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+  </extension>
+  <useStandardCommands>true</useStandardCommands>
+</mdclass:Enum>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="cf6a148b-1ac1-4571-8161-08248a05a71c" extendedConfigurationObject="2d11b548-2466-474e-a9b9-1d7800d6d8c6">
+  <producedTypes>
+    <refType typeId="90d1040f-d08d-429c-9980-5d232c892dde" valueTypeId="ccaa5fd4-46cf-410c-8d1b-c636a43fe8d2"/>
+    <listType typeId="5482e8e2-d6c1-4612-8f30-48dc731fddee" valueTypeId="54c9ca00-add5-4f1d-beb2-3827a7883e2d"/>
+    <managerType typeId="9142c3d2-e95e-41df-9d81-677ebf810cef" valueTypeId="1839efe8-800d-47c4-bda9-5e3d42b4afdd"/>
+  </producedTypes>
+  <name>ВидыСтатейУправленческогоБаланса</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:EnumExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+  </extension>
+  <useStandardCommands>true</useStandardCommands>
+</mdclass:Enum>

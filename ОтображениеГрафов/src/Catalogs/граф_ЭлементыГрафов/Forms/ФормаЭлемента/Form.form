@@ -414,7 +414,7 @@
     <name>Объект</name>
     <id>1</id>
     <valueType>
-      <types>CatalogObject.граф_ЭлементыГрафа</types>
+      <types>CatalogObject.граф_ЭлементыГрафов</types>
     </valueType>
     <view>
       <common>true</common>

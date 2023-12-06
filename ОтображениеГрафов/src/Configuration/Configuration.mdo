@@ -49,6 +49,14 @@
   <commonTemplates>CommonTemplate.граф_БиблиотекаG6Версия4</commonTemplates>
   <commonTemplates>CommonTemplate.граф_ШаблонHTML</commonTemplates>
   <commonTemplates>CommonTemplate.граф_СкриптИнициализацииГрафа</commonTemplates>
-  <catalogs>Catalog.граф_ЭлементыГрафа</catalogs>
+  <definedTypes>DefinedType.ДенежнаяСуммаЛюбогоЗнака</definedTypes>
+  <commonForms>CommonForm.УпрощеннаяНастройкаСхемыКомпоновкиДанных</commonForms>
+  <catalogs>Catalog.граф_ЭлементыГрафов</catalogs>
+  <catalogs>Catalog.граф_СхемыГрафов</catalogs>
+  <catalogs>Catalog.граф_ИсточникиДанныхГрафов</catalogs>
   <enums>Enum.граф_ТипЭлементаГрафа</enums>
+  <enums>Enum.ВидыСтатейУправленческогоБаланса</enums>
+  <enums>Enum.ХозяйственныеОперации</enums>
+  <accumulationRegisters>AccumulationRegister.ПрочиеАктивыПассивы</accumulationRegisters>
+  <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.СтатьиАктивовПассивов</chartsOfCharacteristicTypes>
 </mdclass:Configuration>
