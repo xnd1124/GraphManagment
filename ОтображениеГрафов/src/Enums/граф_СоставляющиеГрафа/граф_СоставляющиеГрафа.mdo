@@ -5,7 +5,7 @@
     <listType typeId="8d29c4d4-bcf0-41e6-831f-633678be1bf9" valueTypeId="0f3e3926-55eb-420e-9871-3d7474324f5c"/>
     <managerType typeId="0baf80be-9369-4861-b550-a608cb8ddcf6" valueTypeId="e8dd862c-394d-4514-a195-73cf60b80a4b"/>
   </producedTypes>
-  <name>граф_ТипЭлементаГрафа</name>
+  <name>граф_СоставляющиеГрафа</name>
   <synonym>
     <key>ru</key>
     <value>Элемент графа</value>

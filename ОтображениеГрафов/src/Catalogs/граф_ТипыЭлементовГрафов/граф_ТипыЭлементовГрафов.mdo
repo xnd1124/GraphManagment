@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="572ce16e-7ef2-4d23-86ca-656efe1aaa2e">
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="433b341f-474f-4799-af39-262a41c3661b">
   <producedTypes>
-    <objectType typeId="4410222f-92d0-422e-8519-7a9510fceab1" valueTypeId="5ba1d983-d8fe-44cc-899d-b4fa7d923139"/>
-    <refType typeId="e7150c72-2b8f-41e8-acbd-13b3729c690a" valueTypeId="2acbc39e-a147-4cef-a713-a5a63da630a3"/>
-    <selectionType typeId="06f4fdea-a5f2-47f0-87ea-6215cbb61c24" valueTypeId="6a7577c8-c907-4b0d-8422-739331d5e262"/>
-    <listType typeId="0b926972-3aa9-4485-a268-a8b30a48604e" valueTypeId="a6eda9ef-f5e5-49ef-b122-b4363c57e76f"/>
-    <managerType typeId="35aa5121-dffa-4a50-986c-100fbdfa4246" valueTypeId="0c58d9af-c058-496a-8deb-a93ca2e2a9dc"/>
+    <objectType typeId="595f162a-0a5c-4b5f-97a0-477448f960b4" valueTypeId="be263230-7fee-4060-85ac-53b00712d9be"/>
+    <refType typeId="9c034a8f-20fd-4dc3-b177-3526ccb2c6a6" valueTypeId="220034da-3174-4325-9ddd-f587d9b23096"/>
+    <selectionType typeId="28106502-c979-4383-84d7-a3f8cde325a7" valueTypeId="bc0d19b5-bd75-4fa3-b3f9-b88cb6218919"/>
+    <listType typeId="7a94dc8f-8fed-4359-8e42-433cd23a0abb" valueTypeId="13eb6be0-05ba-4652-b9d0-e8bb3f584f13"/>
+    <managerType typeId="2dfe4188-d7a8-44d9-afcc-b576e65e085a" valueTypeId="c7ace595-785e-4ef5-a4d1-5c2bf37fb4b6"/>
   </producedTypes>
-  <name>граф_ЭлементыГрафов</name>
+  <name>граф_ТипыЭлементовГрафов</name>
   <synonym>
     <key>ru</key>
-    <value>Элементы графов</value>
+    <value>Типы элементов графа</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
-  <inputByString>Catalog.граф_ЭлементыГрафов.StandardAttribute.Code</inputByString>
-  <inputByString>Catalog.граф_ЭлементыГрафов.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.граф_ТипыЭлементовГрафов.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.граф_ТипыЭлементовГрафов.StandardAttribute.Description</inputByString>
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <standardAttributes>
     <dataHistory>Use</dataHistory>
@@ -102,7 +102,7 @@
   <fullTextSearch>Use</fullTextSearch>
   <objectPresentation>
     <key>ru</key>
-    <value>Элементы графов</value>
+    <value>Тип элемента графа</value>
   </objectPresentation>
   <hierarchical>true</hierarchical>
   <levelCount>2</levelCount>
@@ -281,9 +281,9 @@
   </predefined>
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
-  <defaultObjectForm>Catalog.граф_ЭлементыГрафов.Form.ФормаЭлемента</defaultObjectForm>
-  <defaultListForm>Catalog.граф_ЭлементыГрафов.Form.ФормаСписка</defaultListForm>
-  <attributes uuid="e08dbb64-1bf0-43c7-8186-b92315fd4d63">
+  <defaultObjectForm>Catalog.граф_ТипыЭлементовГрафов.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.граф_ТипыЭлементовГрафов.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="bc391fc2-8e51-47c9-8495-c5f16729c804">
     <name>ТипЭлемента</name>
     <synonym>
       <key>ru</key>
@@ -301,43 +301,24 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <attributes uuid="563fb3ee-1b91-42ac-b18a-6f7a4fa5830a">
-    <name>РасширяемыйЭлемент</name>
+  <attributes uuid="bcb058aa-ab44-446c-9bbe-8d23f9300752">
+    <name>ОписаниеЭлементаJS</name>
     <synonym>
       <key>ru</key>
-      <value>Расширяемый элемент</value>
-    </synonym>
-    <type>
-      <types>CatalogRef.граф_ЭлементыГрафов</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillChecking>ShowError</fillChecking>
-    <choiceParameterLinks>
-      <name>Отбор.ТипЭлемента</name>
-      <field>Catalog.граф_ЭлементыГрафов.Attribute.ТипЭлемента</field>
-    </choiceParameterLinks>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="7e0668ca-6a0e-4174-b526-8bbb9fbe02ec">
-    <name>ОписаниеЭлементаJSON</name>
-    <synonym>
-      <key>ru</key>
-      <value>Описание элемента в формате JSON</value>
+      <value>Описание элемента JS</value>
     </synonym>
     <type>
       <types>String</types>
       <stringQualifiers/>
     </type>
+    <multiLine>true</multiLine>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fillValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <forms uuid="23739223-dfd2-43fd-967e-f2cf55df25d6">
+  <forms uuid="944dec57-012e-4d5d-8378-324a796b8f73">
     <name>ФормаЭлемента</name>
     <synonym>
       <key>ru</key>
@@ -346,7 +327,7 @@
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
   </forms>
-  <forms uuid="6031dd95-648e-44ed-875c-606f1e1afb01">
+  <forms uuid="d40bff45-c627-4d60-8318-61bb96505c9e">
     <name>ФормаСписка</name>
     <synonym>
       <key>ru</key>
@@ -355,24 +336,16 @@
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
   </forms>
-  <templates uuid="2f30ddef-fe5a-4533-bff7-c96f77129c17">
+  <templates uuid="886a7e72-bba6-4188-ab8e-b0fbb5bfcbaa">
     <name>ШаблонРеброПоУмолчанию</name>
     <templateType>TextDocument</templateType>
   </templates>
-  <templates uuid="e1896098-1a1b-4107-b142-4f5bd267585d">
+  <templates uuid="d73d493c-95d4-4075-ba71-00c8610de1f2">
     <name>ШаблонВершинаПоУмолчанию</name>
     <templateType>TextDocument</templateType>
   </templates>
-  <templates uuid="2f27db38-36b4-47b1-8ba6-6e8e6f99f167">
+  <templates uuid="4621339a-a2e7-4024-90c7-93f2fc4a9613">
     <name>ШаблонКонтейнерПоУмолчанию</name>
     <templateType>TextDocument</templateType>
-  </templates>
-  <templates uuid="58670506-1057-4c6d-912a-1e7ce357709e">
-    <name>JSONEditor</name>
-    <synonym>
-      <key>ru</key>
-      <value>JSONEditor</value>
-    </synonym>
-    <templateType>BinaryData</templateType>
   </templates>
 </mdclass:Catalog>
