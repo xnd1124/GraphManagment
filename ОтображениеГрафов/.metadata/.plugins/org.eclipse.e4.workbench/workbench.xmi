@@ -11,10 +11,8 @@
     <persistedState key="show_in_time" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;show_in_time/>"/>
     <tags>topLevel</tags>
     <tags>shellMaximized</tags>
-    <children xsi:type="basic:PartSashContainer" xmi:id="_GicYYpKbEe6LXcwLYx4zOg" selectedElement="_GicYZJKbEe6LXcwLYx4zOg" horizontal="true">
-      <children xsi:type="advanced:PerspectiveStack" xmi:id="_GicYY5KbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.ide.perspectivestack" visible="false" containerData="7500" selectedElement="_GojAY5KbEe6LXcwLYx4zOg">
-        <tags>Minimized</tags>
-        <tags>MinimizedByZoom</tags>
+    <children xsi:type="basic:PartSashContainer" xmi:id="_GicYYpKbEe6LXcwLYx4zOg" selectedElement="_GicYY5KbEe6LXcwLYx4zOg" horizontal="true">
+      <children xsi:type="advanced:PerspectiveStack" xmi:id="_GicYY5KbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_GojAY5KbEe6LXcwLYx4zOg">
         <children xsi:type="advanced:Perspective" xmi:id="_GojAY5KbEe6LXcwLYx4zOg" elementId="com._1c.g5.v8.dt.ui2.perspective" selectedElement="_GojAZJKbEe6LXcwLYx4zOg" label="1C:Enterprise" iconURI="platform:/plugin/com._1c.g5.v8.dt.ide.ui/icons/obj16/dt.png">
           <persistedState key="persp.hiddenItems" value="persp.hideToolbarSC:print,persp.hideToolbarSC:org.eclipse.ui.edit.undo,persp.hideToolbarSC:org.eclipse.ui.edit.redo,persp.hideToolbarSC:org.eclipse.ui.edit.text.toggleShowSelectedElementOnly,persp.hideToolbarSC:org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar,persp.hideMenuSC:org.eclipse.ui.project.buildAutomatically,persp.hideMenuSC:org.eclipse.ui.project.buildAll,persp.hideMenuSC:org.eclipse.ui.project.buildProject,persp.hideMenuSC:org.eclipse.ui.internal.ide.actions.BuildSetMenu,persp.hideMenuSC:org.eclipse.ui.browser.openBrowser,persp.hideMenuSC:org.eclipse.epp.mpc.ui.command.showFavorites,persp.hideMenuSC:org.eclipse.equinox.p2.ui.sdk.update,persp.hideToolbarSC:org.eclipse.debug.ui.commands.RunToLine,"/>
           <tags>persp.actionSet:org.eclipse.ui.cheatsheets.actionSet</tags>
@@ -44,6 +42,7 @@
           <tags>persp.viewSC:com._1c.g5.v8.dt.bsl.ui.editor.callhierarchy.view</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_GojAZJKbEe6LXcwLYx4zOg" selectedElement="_GojAZZKbEe6LXcwLYx4zOg" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_GojAZZKbEe6LXcwLYx4zOg" elementId="explorers" containerData="2300" selectedElement="_GojAZpKbEe6LXcwLYx4zOg">
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_GojAZpKbEe6LXcwLYx4zOg" elementId="com._1c.g5.v8.dt.ui2.navigator" ref="_GoeH4JKbEe6LXcwLYx4zOg" closeable="true">
                 <tags>View</tags>
                 <tags>categoryTag:1C:&#x41f;&#x440;&#x435;&#x434;&#x43f;&#x440;&#x438;&#x44f;&#x442;&#x438;&#x435;</tags>
@@ -160,14 +159,12 @@
           </children>
         </children>
       </children>
-      <children xsi:type="basic:PartStack" xmi:id="_GicYZJKbEe6LXcwLYx4zOg" elementId="stickyFolderRight" containerData="2500" selectedElement="_GicYZpKbEe6LXcwLYx4zOg">
-        <tags>active</tags>
-        <tags>Maximized</tags>
+      <children xsi:type="basic:PartStack" xmi:id="_GicYZJKbEe6LXcwLYx4zOg" elementId="stickyFolderRight" toBeRendered="false" containerData="2500">
         <children xsi:type="advanced:Placeholder" xmi:id="_GicYZZKbEe6LXcwLYx4zOg" elementId="org.eclipse.help.ui.HelpView" toBeRendered="false" ref="_GibxUJKbEe6LXcwLYx4zOg" closeable="true">
           <tags>View</tags>
           <tags>categoryTag:&#x421;&#x43f;&#x440;&#x430;&#x432;&#x43a;&#x430;</tags>
         </children>
-        <children xsi:type="advanced:Placeholder" xmi:id="_GicYZpKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.internal.introview" ref="_GicYYJKbEe6LXcwLYx4zOg" closeable="true">
+        <children xsi:type="advanced:Placeholder" xmi:id="_GicYZpKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.internal.introview" toBeRendered="false" ref="_GicYYJKbEe6LXcwLYx4zOg" closeable="true">
           <tags>View</tags>
           <tags>categoryTag:&#x41e;&#x431;&#x449;&#x438;&#x435;</tags>
         </children>
@@ -189,7 +186,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view>&#xD;&#xA;&lt;presentation currentPage=&quot;root&quot; restore=&quot;true&quot;/>&#xD;&#xA;&lt;standbyPart/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:&#x41e;&#x431;&#x449;&#x438;&#x435;</tags>
-      <tags>active</tags>
       <tags>activeOnClose</tags>
       <menus xmi:id="_G2VkwJKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.internal.introview">
         <tags>ViewMenu</tags>
@@ -215,6 +211,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:1C:&#x41f;&#x440;&#x435;&#x434;&#x43f;&#x440;&#x438;&#x44f;&#x442;&#x438;&#x435;</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_Gqm14JKbEe6LXcwLYx4zOg" elementId="com._1c.g5.v8.dt.ui2.navigator">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -379,7 +377,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Gj3UsJKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Gj7mIJKbEe6LXcwLYx4zOg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="&#x41f;&#x435;&#x447;&#x430;&#x442;&#x44c;" enabled="false" command="_GSAIqpKbEe6LXcwLYx4zOg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_rL8O0JmAEe6UQtriBWVzXA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="&#x41f;&#x435;&#x447;&#x430;&#x442;&#x44c;" command="_GSAIqpKbEe6LXcwLYx4zOg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Gj3UsZKbEe6LXcwLYx4zOg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -404,7 +402,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Gj3UuJKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Gj8NMZKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="&#x417;&#x430;&#x43a;&#x440;&#x435;&#x43f;&#x438;&#x442;&#x44c; &#x440;&#x435;&#x434;&#x430;&#x43a;&#x442;&#x43e;&#x440;" enabled="false" type="Check" command="_GR_h2ZKbEe6LXcwLYx4zOg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_rL_SIJmAEe6UQtriBWVzXA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="&#x417;&#x430;&#x43a;&#x440;&#x435;&#x43f;&#x438;&#x442;&#x44c; &#x440;&#x435;&#x434;&#x430;&#x43a;&#x442;&#x43e;&#x440;" enabled="false" type="Check" command="_GR_h2ZKbEe6LXcwLYx4zOg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Gj3UuZKbEe6LXcwLYx4zOg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -437,9 +435,14 @@
       <children xsi:type="menu:ToolControl" xmi:id="_GRnHF5KbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.ProgressBar" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
         <tags>Draggable</tags>
       </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_hu00IJmAEe6R_PX1PsPBfg" elementId="org.eclipse.ui.internal.intro.impl.presentations.IntroLaunchBar" contributionURI="bundleclass://org.eclipse.ui.intro/org.eclipse.ui.internal.intro.impl.presentations.IntroLaunchBar">
+        <persistedState key="introConfigId" value="com._1c.g5.v8.dt.product.intro.config"/>
+        <persistedState key="lastPageId" value="root"/>
+        <tags>Draggable</tags>
+      </children>
     </trimBars>
-    <trimBars xmi:id="_GRnHGJKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.trim.vertical1" contributorURI="platform:/plugin/org.eclipse.platform" side="Left">
-      <children xsi:type="menu:ToolControl" xmi:id="_G4XlEJKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.ide.perspectivestack(minimized)" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+    <trimBars xmi:id="_GRnHGJKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.trim.vertical1" contributorURI="platform:/plugin/org.eclipse.platform" toBeRendered="false" side="Left">
+      <children xsi:type="menu:ToolControl" xmi:id="_G4XlEJKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.ide.perspectivestack(minimized)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
         <tags>TrimStack</tags>
         <tags>Draggable</tags>
       </children>
@@ -1154,6 +1157,19 @@
   <bindingTables xmi:id="_Goc5x5KbEe6LXcwLYx4zOg" bindingContext="_Goc5xpKbEe6LXcwLYx4zOg"/>
   <bindingTables xmi:id="_Goc5yZKbEe6LXcwLYx4zOg" bindingContext="_Goc5yJKbEe6LXcwLYx4zOg"/>
   <bindingTables xmi:id="_Goc5y5KbEe6LXcwLYx4zOg" bindingContext="_Goc5ypKbEe6LXcwLYx4zOg"/>
+  <bindingTables xmi:id="_g4GngJmAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.context" bindingContext="_g35zMJmAEe6R_PX1PsPBfg">
+    <bindings xmi:id="_g4GngZmAEe6R_PX1PsPBfg" keySequence="CTRL+SHIFT+P" command="_g33-BJmAEe6R_PX1PsPBfg"/>
+    <bindings xmi:id="_g4HOkJmAEe6R_PX1PsPBfg" keySequence="CTRL+/" command="_g33W8JmAEe6R_PX1PsPBfg"/>
+    <bindings xmi:id="_g4H1oJmAEe6R_PX1PsPBfg" keySequence="CTRL+SHIFT+F" command="_g33-BZmAEe6R_PX1PsPBfg"/>
+    <bindings xmi:id="_g4IcsJmAEe6R_PX1PsPBfg" keySequence="CTRL+O" command="_g33W8ZmAEe6R_PX1PsPBfg"/>
+    <bindings xmi:id="_g4JDwJmAEe6R_PX1PsPBfg" keySequence="ALT+SHIFT+R" command="_g33W85mAEe6R_PX1PsPBfg"/>
+    <bindings xmi:id="_g4JDwZmAEe6R_PX1PsPBfg" keySequence="ALT+SHIFT+O" command="_g33-AZmAEe6R_PX1PsPBfg"/>
+    <bindings xmi:id="_g4K48JmAEe6R_PX1PsPBfg" keySequence="CTRL+SHIFT+ARROW_UP" command="_g33-AJmAEe6R_PX1PsPBfg"/>
+    <bindings xmi:id="_g4K48ZmAEe6R_PX1PsPBfg" keySequence="CTRL+SHIFT+ARROW_DOWN" command="_g33-A5mAEe6R_PX1PsPBfg"/>
+    <bindings xmi:id="_g4LgAJmAEe6R_PX1PsPBfg" keySequence="ALT+SHIFT+ARROW_UP" command="_g33W8pmAEe6R_PX1PsPBfg"/>
+    <bindings xmi:id="_g4LgAZmAEe6R_PX1PsPBfg" keySequence="ALT+SHIFT+ARROW_DOWN" command="_g33-ApmAEe6R_PX1PsPBfg"/>
+    <bindings xmi:id="_g4MuIJmAEe6R_PX1PsPBfg" keySequence="CTRL+2 R" command="_g33W85mAEe6R_PX1PsPBfg"/>
+  </bindingTables>
   <rootContext xmi:id="_GRnHG5KbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.platform" name="&#x412; &#x43e;&#x431;&#x44b;&#x447;&#x43d;&#x44b;&#x445; &#x43e;&#x43a;&#x43d;&#x430;&#x445; &#x438; &#x43e;&#x43a;&#x43d;&#x430;&#x445; &#x434;&#x438;&#x430;&#x43b;&#x43e;&#x433;&#x430;" description="&#x41e;&#x442;&#x43a;&#x440;&#x44b;&#x442;&#x43e; &#x43e;&#x431;&#x44b;&#x447;&#x43d;&#x43e;&#x435; &#x43e;&#x43a;&#x43d;&#x43e; &#x438;&#x43b;&#x438; &#x43e;&#x43a;&#x43d;&#x43e; &#x434;&#x438;&#x430;&#x43b;&#x43e;&#x433;&#x430;">
     <children xmi:id="_GRnHHJKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.platform" name="&#x412; &#x43e;&#x43a;&#x43d;&#x430;&#x445;" description="&#x41e;&#x442;&#x43a;&#x440;&#x44b;&#x442;&#x43e; &#x43e;&#x43a;&#x43d;&#x43e;">
       <children xmi:id="_GRnHHZKbEe6LXcwLYx4zOg" elementId="org.eclipse.e4.ui.contexts.views" contributorURI="platform:/plugin/org.eclipse.platform" name="%bindingcontext.name.bindingView"/>
@@ -1182,6 +1198,7 @@
           <children xmi:id="_GSClJ5KbEe6LXcwLYx4zOg" elementId="com._1c.g5.v8.dt.ql.dcs.ui.editor.context" name="com._1c.g5.v8.dt.ql.dcs.ui.editor.context"/>
         </children>
         <children xmi:id="_GSClWJKbEe6LXcwLYx4zOg" elementId="org.eclipse.ui.genericeditor.genericEditorContext" name="&#x432; &#x420;&#x435;&#x434;&#x430;&#x43a;&#x442;&#x43e;&#x440;&#x435; &#x443;&#x43d;&#x438;&#x432;&#x435;&#x440;&#x441;&#x430;&#x43b;&#x44c;&#x43d;&#x43e;&#x433;&#x43e; &#x43a;&#x43e;&#x434;&#x430;" description="&#x41f;&#x440;&#x438; &#x440;&#x435;&#x434;&#x430;&#x43a;&#x442;&#x438;&#x440;&#x43e;&#x432;&#x430;&#x43d;&#x438;&#x438; &#x432; &#x420;&#x435;&#x434;&#x430;&#x43a;&#x442;&#x43e;&#x440;&#x435; &#x443;&#x43d;&#x438;&#x432;&#x435;&#x440;&#x441;&#x430;&#x43b;&#x44c;&#x43d;&#x43e;&#x433;&#x43e; &#x43a;&#x43e;&#x434;&#x430;"/>
+        <children xmi:id="_g35zMJmAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.context" name="LiClipse editor" description="LiClipse commands"/>
       </children>
       <children xmi:id="_GSCk5JKbEe6LXcwLYx4zOg" elementId="com._1c.g5.v8.dt.dcs.ui.settings.grouping.context" name="Settings grouping fields context"/>
       <children xmi:id="_GSCk5pKbEe6LXcwLYx4zOg" elementId="com._1c.g5.v8.dt.aef.editors.list.predefined.ext_dimension_types" name="%context.readonlylist.predefineds.name"/>
@@ -1656,6 +1673,18 @@
     <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.wst.xml.ui"/>
     <tags>View</tags>
     <tags>categoryTag:XML</tags>
+  </descriptors>
+  <descriptors xmi:id="_hFduEJmAEe6R_PX1PsPBfg" elementId="com.brainwy.liclipse.editor.views.partitioning.LiClipsePartitioningView" label="LiClipse Partitions" iconURI="platform:/plugin/org.brainwy.liclipsetext.editor/icons/partitions.png" tooltip="" category="LiClipse" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.brainwy.liclipsetext.editor.views.partitioning.LiClipsePartitioningView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.brainwy.liclipsetext.editor"/>
+    <tags>View</tags>
+    <tags>categoryTag:LiClipse</tags>
+  </descriptors>
+  <descriptors xmi:id="_hFgKUJmAEe6R_PX1PsPBfg" elementId="com.brainwy.liclipse.editor.views.languages.LiClipseLanguagesView" label="LiClipse Languages" iconURI="platform:/plugin/org.brainwy.liclipsetext.editor/icons/langs.png" tooltip="" category="LiClipse" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.brainwy.liclipsetext.editor.views.languages.LiClipseLanguagesView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.brainwy.liclipsetext.editor"/>
+    <tags>View</tags>
+    <tags>categoryTag:LiClipse</tags>
   </descriptors>
   <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
@@ -2942,6 +2971,16 @@
   <commands xmi:id="_GhiZdJKbEe6LXcwLYx4zOg" elementId="AUTOGEN:::org.eclipse.debug.ui.memoryView.toolbar/org.eclipse.debug.ui.togglesplitpane" commandName="&#x41f;&#x435;&#x440;&#x435;&#x43a;&#x43b;&#x44e;&#x447;&#x438;&#x442;&#x44c; &#x440;&#x430;&#x437;&#x434;&#x435;&#x43b;&#x435;&#x43d;&#x43d;&#x443;&#x44e; &#x43f;&#x430;&#x43d;&#x435;&#x43b;&#x44c;" description="&#x41f;&#x435;&#x440;&#x435;&#x43a;&#x43b;&#x44e;&#x447;&#x438;&#x442;&#x44c; &#x441;&#x43f;&#x43b;&#x438;&#x442; &#x43f;&#x430;&#x43d;&#x435;&#x43b;&#x44c;" category="_GR6CGJKbEe6LXcwLYx4zOg"/>
   <commands xmi:id="_GhjAgJKbEe6LXcwLYx4zOg" elementId="AUTOGEN:::org.eclipse.debug.ui.memoryView.toolbar/org.eclipse.debug.ui.switchMemoryBlock" commandName="&#x41f;&#x435;&#x440;&#x435;&#x43a;&#x43b;&#x44e;&#x447;&#x438;&#x442;&#x44c; &#x43c;&#x43e;&#x43d;&#x438;&#x442;&#x43e;&#x440; &#x43f;&#x430;&#x43c;&#x44f;&#x442;&#x438;" description="&#x41f;&#x435;&#x440;&#x435;&#x43a;&#x43b;&#x44e;&#x447;&#x438;&#x442;&#x44c; &#x43c;&#x43e;&#x43d;&#x438;&#x442;&#x43e;&#x440; &#x43f;&#x430;&#x43c;&#x44f;&#x442;&#x438;" category="_GR6CGJKbEe6LXcwLYx4zOg"/>
   <commands xmi:id="_GhjAgZKbEe6LXcwLYx4zOg" elementId="AUTOGEN:::org.eclipse.debug.ui.memoryView.toolbar/org.eclipse.debug.ui.memoryViewPreferencesAction" commandName="&#x41f;&#x430;&#x440;&#x430;&#x43c;&#x435;&#x442;&#x440;&#x44b;..." description="&amp;&#x41f;&#x430;&#x440;&#x430;&#x43c;&#x435;&#x442;&#x440;&#x44b;..." category="_GR6CGJKbEe6LXcwLYx4zOg"/>
+  <commands xmi:id="_g33W8JmAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.handlers.ToggleComment" commandName="Toggle Comment" category="_g32v4ZmAEe6R_PX1PsPBfg"/>
+  <commands xmi:id="_g33W8ZmAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.handlers.QuickOutline" commandName="Quick Outline" category="_g32v4ZmAEe6R_PX1PsPBfg"/>
+  <commands xmi:id="_g33W8pmAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.handlers.SelectEnclosingScope" commandName="Select Enclosing Scope" category="_g32v4ZmAEe6R_PX1PsPBfg"/>
+  <commands xmi:id="_g33W85mAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.handlers.Rename" commandName="Rename" category="_g32v4ZmAEe6R_PX1PsPBfg"/>
+  <commands xmi:id="_g33-AJmAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.handlers.PrevElement" commandName="Previous Element" category="_g32v4ZmAEe6R_PX1PsPBfg"/>
+  <commands xmi:id="_g33-AZmAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.handlers.ToggleMarkOccurrences" commandName="Toggle Mark Occurrences" category="_g32v4ZmAEe6R_PX1PsPBfg"/>
+  <commands xmi:id="_g33-ApmAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.handlers.DeselectEnclosingScope" commandName="Deselect Enclosing Scope" category="_g32v4ZmAEe6R_PX1PsPBfg"/>
+  <commands xmi:id="_g33-A5mAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.handlers.NextElement" commandName="Next Element" category="_g32v4ZmAEe6R_PX1PsPBfg"/>
+  <commands xmi:id="_g33-BJmAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.handlers.GoToMatchingBracket" commandName="Go to Matching Bracket" category="_g32v4ZmAEe6R_PX1PsPBfg"/>
+  <commands xmi:id="_g33-BZmAEe6R_PX1PsPBfg" elementId="org.brainwy.liclipsetext.editor.handlers.Formatter" commandName="Code Format" category="_g32v4ZmAEe6R_PX1PsPBfg"/>
   <addons xmi:id="_GRnHH5KbEe6LXcwLYx4zOg" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_GRnHIJKbEe6LXcwLYx4zOg" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_GRnHIZKbEe6LXcwLYx4zOg" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -2996,4 +3035,5 @@
   <categories xmi:id="_GR6CFpKbEe6LXcwLYx4zOg" elementId="com._1c.g5.v8.dt.form.ui.formAttributes.category" name="&#x420;&#x435;&#x434;&#x430;&#x43a;&#x442;&#x43e;&#x440; &#x444;&#x43e;&#x440;&#x43c;&#x44b;,&#x440;&#x435;&#x43a;&#x432;&#x438;&#x437;&#x438;&#x442;&#x44b;" description="&#x420;&#x435;&#x43a;&#x432;&#x438;&#x437;&#x438;&#x442;&#x44b; &#x444;&#x43e;&#x440;&#x43c;&#x44b;"/>
   <categories xmi:id="_GR6CF5KbEe6LXcwLYx4zOg" elementId="org.eclipse.xtext.ui.category.refactoring" name="&#x420;&#x435;&#x444;&#x430;&#x43a;&#x442;&#x43e;&#x440;&#x438;&#x43d;&#x433;" description="&#x41a;&#x43e;&#x43c;&#x430;&#x43d;&#x434;&#x44b; &#x440;&#x435;&#x444;&#x430;&#x43a;&#x442;&#x43e;&#x440;&#x438;&#x43d;&#x433;&#x430;"/>
   <categories xmi:id="_GR6CGJKbEe6LXcwLYx4zOg" elementId="org.eclipse.core.commands.categories.autogenerated" name="&#x411;&#x435;&#x437; &#x43a;&#x430;&#x442;&#x435;&#x433;&#x43e;&#x440;&#x438;&#x438;" description="&#x41a;&#x43e;&#x43c;&#x430;&#x43d;&#x434;&#x44b;, &#x43a;&#x43e;&#x442;&#x43e;&#x440;&#x44b;&#x435; &#x431;&#x44b;&#x43b;&#x438; &#x441;&#x433;&#x435;&#x43d;&#x435;&#x440;&#x438;&#x440;&#x43e;&#x432;&#x430;&#x43d;&#x44b; &#x430;&#x432;&#x442;&#x43e;&#x43c;&#x430;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43a;&#x438; &#x438;&#x43b;&#x438; &#x43d;&#x435; &#x43e;&#x442;&#x43d;&#x435;&#x441;&#x435;&#x43d;&#x44b; &#x43d;&#x438; &#x43a; &#x43e;&#x434;&#x43d;&#x43e;&#x439; &#x438;&#x437; &#x43a;&#x430;&#x442;&#x435;&#x433;&#x43e;&#x440;&#x438;&#x439;"/>
+  <categories xmi:id="_g32v4ZmAEe6R_PX1PsPBfg" elementId="com.brainwy.liclipse.handlers.category" name="LiClipse Actions"/>
 </application:Application>
