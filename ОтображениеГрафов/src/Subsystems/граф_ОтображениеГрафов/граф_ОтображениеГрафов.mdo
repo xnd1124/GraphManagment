@@ -10,8 +10,9 @@
   <picture xsi:type="core:PictureRef">
     <picture>CommonPicture.граф_ИконкаПодсистемы</picture>
   </picture>
-  <content>Catalog.граф_ТипыЭлементовГрафов</content>
+  <content>Catalog.граф_ТипыОформленийЭлементовГрафов</content>
   <content>Catalog.граф_СхемыГрафов</content>
   <content>Catalog.граф_ИсточникиДанныхГрафов</content>
   <content>DataProcessor.граф_ВыводГрафа</content>
+  <content>Catalog.граф_ОформленияЭлементовГрафа</content>
 </mdclass:Subsystem>

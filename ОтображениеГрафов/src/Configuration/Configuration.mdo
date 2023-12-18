@@ -52,11 +52,11 @@
   <commonTemplates>CommonTemplate.граф_graphviz</commonTemplates>
   <definedTypes>DefinedType.ДенежнаяСуммаЛюбогоЗнака</definedTypes>
   <commonForms>CommonForm.УпрощеннаяНастройкаСхемыКомпоновкиДанных</commonForms>
-  <catalogs>Catalog.граф_ТипыЭлементовГрафов</catalogs>
+  <catalogs>Catalog.граф_ТипыОформленийЭлементовГрафов</catalogs>
   <catalogs>Catalog.граф_СхемыГрафов</catalogs>
   <catalogs>Catalog.граф_ИсточникиДанныхГрафов</catalogs>
-  <catalogs>Catalog.граф_ЭлементыГрафов</catalogs>
-  <enums>Enum.граф_СоставляющиеГрафа</enums>
+  <catalogs>Catalog.граф_ОформленияЭлементовГрафа</catalogs>
+  <enums>Enum.граф_КомпонентыГрафа</enums>
   <enums>Enum.ВидыСтатейУправленческогоБаланса</enums>
   <enums>Enum.ХозяйственныеОперации</enums>
   <dataProcessors>DataProcessor.граф_ВыводГрафа</dataProcessors>
