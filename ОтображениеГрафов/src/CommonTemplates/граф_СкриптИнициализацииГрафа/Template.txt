@@ -8,15 +8,19 @@ const height = document.documentElement.clientHeight - 20;
 		width,
 		height,
 		fitView: true, 
+		modes: {
+    	default: ['collapse-expand-combo', 'drag-canvas', 'zoom-canvas',
+    	      { type:'drag-node',
+				onlyChangeComboSize:true
+      		  },
+      		  { type:'drag-combo',
+				onlyChangeComboSize:true
+      		  },	
+    	],
+  		},
 	}
 );
                                                         
 graph.data(data);
 graph.render();  
       
-window.addEventListener('resize', 
-	function(event){
-		graph.changeSize(container.clientWidth, container.clientHeight);
-		graph.fitView();
-				   }
-)

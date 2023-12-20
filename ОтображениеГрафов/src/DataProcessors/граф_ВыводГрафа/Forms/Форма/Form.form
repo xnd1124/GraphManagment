@@ -103,7 +103,6 @@
   <items xsi:type="form:Table">
     <name>СвязиУзлов</name>
     <id>9</id>
-    <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
       <common>true</common>
@@ -530,7 +529,6 @@
   <items xsi:type="form:Table">
     <name>Узлы</name>
     <id>65</id>
-    <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
       <common>true</common>
@@ -1006,6 +1004,7 @@
     <verticalLines>true</verticalLines>
     <searchOnInput>Auto</searchOnInput>
     <initialListView>Auto</initialListView>
+    <initialTreeView>ExpandAllLevels</initialTreeView>
     <horizontalStretch>true</horizontalStretch>
     <verticalStretch>true</verticalStretch>
     <fileDragMode>AsFileRef</fileDragMode>
@@ -1220,6 +1219,26 @@
         <stringQualifiers>
           <length>200</length>
         </stringQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ВесСвязи</name>
+      <title>
+        <key>ru</key>
+        <value>Вес связи</value>
+      </title>
+      <id>23</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
       </valueType>
       <view>
         <common>true</common>
