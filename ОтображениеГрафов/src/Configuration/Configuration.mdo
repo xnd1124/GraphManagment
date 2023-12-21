@@ -45,6 +45,8 @@
   </languages>
   <subsystems>Subsystem.граф_ОтображениеГрафов</subsystems>
   <commonPictures>CommonPicture.граф_ИконкаПодсистемы</commonPictures>
+  <commonPictures>CommonPicture.ВыбратьВариантОтчета</commonPictures>
+  <commonPictures>CommonPicture.СохранитьВариантОтчета</commonPictures>
   <roles>Role.граф_ОсновнаяРоль</roles>
   <commonTemplates>CommonTemplate.граф_БиблиотекаG6Версия4</commonTemplates>
   <commonTemplates>CommonTemplate.граф_ШаблонHTML</commonTemplates>
@@ -54,9 +56,9 @@
   <definedTypes>DefinedType.ДенежнаяСуммаЛюбогоЗнака</definedTypes>
   <commonForms>CommonForm.УпрощеннаяНастройкаСхемыКомпоновкиДанных</commonForms>
   <catalogs>Catalog.граф_ТипыОформленийЭлементовГрафов</catalogs>
-  <catalogs>Catalog.граф_СхемыГрафов</catalogs>
   <catalogs>Catalog.граф_ИсточникиДанныхГрафов</catalogs>
   <catalogs>Catalog.граф_ОформленияЭлементовГрафа</catalogs>
+  <catalogs>Catalog.граф_СохраненныеГрафы</catalogs>
   <enums>Enum.граф_КомпонентыГрафа</enums>
   <enums>Enum.ВидыСтатейУправленческогоБаланса</enums>
   <enums>Enum.ХозяйственныеОперации</enums>

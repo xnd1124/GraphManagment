@@ -5,7 +5,18 @@
     <title>Просмотр графа</title>
   </head>
   <body>
-    <div id="mountNode"></div>
+    <div id="mountNode"></div>   
+    <script>
+    function SavedGraph(){        
+    	dataGraph = graph.save();
+    	return JSON.stringify(dataGraph);
+    };  
+    function GraphFromJSON(stringData){        
+    	dataGraph = JSON.parse(stringData);
+    	graph.data(dataGraph);
+		graph.render(); 
+    }; 
+    </script>
 	<script>
     	//содержимое библиотеки
     	//данные графа

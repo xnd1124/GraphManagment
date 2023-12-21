@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bcd78257-5cfb-4fa0-b7ac-15b1538bbea1">
+  <producedTypes>
+    <objectType typeId="87eed742-1e74-4460-8b45-65e78744957a" valueTypeId="afc0ea74-325b-4516-a57d-b7c846283857"/>
+    <refType typeId="da4e4a5e-9c28-430f-a1df-c6016f8d863a" valueTypeId="73f92630-dca5-4183-8169-d730538b4b62"/>
+    <selectionType typeId="324c58c1-1b73-4ad3-8d9d-dd258757e991" valueTypeId="5e830c9f-9522-4cf4-b2d6-5cbda294a88f"/>
+    <listType typeId="2f27e7b8-3e89-47c7-82ed-003fda42e62f" valueTypeId="aa2fa433-bd4c-49eb-a8d6-dd287c821a17"/>
+    <managerType typeId="0cd48962-3631-4031-8fc1-6467683cf8a8" valueTypeId="d4669ac3-6495-4e76-a3ab-55aec8f18ad5"/>
+  </producedTypes>
+  <name>граф_СохраненныеГрафы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сохраненные графы</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.граф_СохраненныеГрафы.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.граф_СохраненныеГрафы.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchical>true</hierarchical>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="a511726b-90c5-4e90-b0d8-40d9f8dfe505">
+    <name>ДанныеГрафа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Данные графа</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>
