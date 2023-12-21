@@ -103,9 +103,12 @@
   <items xsi:type="form:Table">
     <name>СвязиУзлов</name>
     <id>9</id>
+    <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
-      <common>true</common>
+      <for>
+        <role>Role.граф_ОсновнаяРоль</role>
+      </for>
     </userVisible>
     <dataPath xsi:type="form:DataPath">
       <segments>СвязиУзлов</segments>
@@ -482,7 +485,9 @@
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
-      <common>true</common>
+      <for>
+        <role>Role.граф_ОсновнаяРоль</role>
+      </for>
     </userVisible>
     <dataPath xsi:type="form:DataPath">
       <segments>ОписаниеDOT</segments>
@@ -529,9 +534,12 @@
   <items xsi:type="form:Table">
     <name>Узлы</name>
     <id>65</id>
+    <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
-      <common>true</common>
+      <for>
+        <role>Role.граф_ОсновнаяРоль</role>
+      </for>
     </userVisible>
     <dataPath xsi:type="form:DataPath">
       <segments>Узлы</segments>
