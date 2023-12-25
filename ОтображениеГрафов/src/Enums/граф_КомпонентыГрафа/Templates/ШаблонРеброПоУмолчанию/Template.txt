@@ -16,6 +16,7 @@ const data = {
           {
             source: 'Узел1',
             target: 'Узел2',
+            label: ['hello', '\n world'],
              //свойства объекта
              type: "//тип объекта"
           },
