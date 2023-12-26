@@ -117,6 +117,7 @@
   <choiceMode>BothWays</choiceMode>
   <defaultObjectForm>Catalog.граф_ОформленияЭлементовГрафа.Form.ФормаЭлемента</defaultObjectForm>
   <defaultListForm>Catalog.граф_ОформленияЭлементовГрафа.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.граф_ОформленияЭлементовГрафа.Form.ФормаВыбора</defaultChoiceForm>
   <attributes uuid="e9de185f-e4e9-458c-9da9-fca6d0e0c9fa">
     <name>ТипОформления</name>
     <synonym>
@@ -162,6 +163,15 @@
     <synonym>
       <key>ru</key>
       <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="ce48f91d-65e7-49f7-86ca-645c696a7f19">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
     </synonym>
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>

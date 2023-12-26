@@ -197,4 +197,12 @@
     </synonym>
     <templateType>DataCompositionSchema</templateType>
   </templates>
+  <templates uuid="e018be12-f8cc-4539-a3d4-9a7dca529ffd">
+    <name>ПрочиеАктивыПассивы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прочие активы пассивы</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
 </mdclass:Catalog>

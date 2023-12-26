@@ -715,6 +715,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>УзлыЗаголовок</name>
+      <id>116</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Узлы.Заголовок</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>УзлыЗаголовокРасширеннаяПодсказка</name>
+        <id>118</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>УзлыЗаголовокКонтекстноеМеню</name>
+        <id>117</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>УзлыX</name>
       <id>84</id>
       <visible>true</visible>
@@ -1116,6 +1166,7 @@
       </userVisible>
       <autoFill>true</autoFill>
     </contextMenu>
+    <representation>HierarchicalList</representation>
     <changeRowSet>true</changeRowSet>
     <changeRowOrder>true</changeRowOrder>
     <autoMaxWidth>true</autoMaxWidth>
@@ -1406,7 +1457,7 @@
       <valueType>
         <types>String</types>
         <stringQualifiers>
-          <length>200</length>
+          <length>1000</length>
         </stringQualifiers>
       </valueType>
       <view>
@@ -1420,13 +1471,13 @@
       <name>УзелКонца</name>
       <title>
         <key>ru</key>
-        <value>Узел начала</value>
+        <value>Узел конца</value>
       </title>
       <id>7</id>
       <valueType>
         <types>String</types>
         <stringQualifiers>
-          <length>200</length>
+          <length>1000</length>
         </stringQualifiers>
       </valueType>
       <view>
@@ -1440,7 +1491,7 @@
       <name>Направленная</name>
       <title>
         <key>ru</key>
-        <value>Узел начала</value>
+        <value>Направленная</value>
       </title>
       <id>8</id>
       <valueType>
@@ -1538,7 +1589,7 @@
       <valueType>
         <types>String</types>
         <stringQualifiers>
-          <length>200</length>
+          <length>1000</length>
         </stringQualifiers>
       </valueType>
       <view>
@@ -1749,6 +1800,46 @@
     <id>24</id>
     <valueType>
       <types>CatalogRef.граф_СохраненныеГрафы</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ИдентификаторОформленияГруппыПоУмолчанию</name>
+    <title>
+      <key>ru</key>
+      <value>Идентификатор оформления группы по умолчанию</value>
+    </title>
+    <id>26</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ИдентификаторОформленияУзлаПоУмолчанию</name>
+    <title>
+      <key>ru</key>
+      <value>Идентификатор оформления группы по умолчанию</value>
+    </title>
+    <id>27</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
     </valueType>
     <view>
       <common>true</common>
