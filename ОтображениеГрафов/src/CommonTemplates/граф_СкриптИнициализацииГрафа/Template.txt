@@ -4,10 +4,11 @@ const height = document.documentElement.clientHeight - 20;
 
 // автовыравнивание ширины
 data.nodes.forEach(function (node) {
+if (node.label == undefined) return;
 const nodeWidth = G6.Util.getTextSize(node.label, 9);
-console.log(nodeWidth);
-  node.style.width = nodeWidth[0];
+if ('style' in node)  node.style.width = nodeWidth[0];
 });
+
 
  const graph = new G6.Graph(
  	{

@@ -9,6 +9,8 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ВидИсточника</dataPath>
 			<field>ВидИсточника</field>
+			<appearance/>
+			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ТипРегистратора</dataPath>
@@ -16,13 +18,17 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Тип регистратора</v8:content>
+					<v8:content>Тип регистратора (заголовок)</v8:content>
 				</v8:item>
 			</title>
+			<appearance/>
+			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Статья</dataPath>
 			<field>Статья</field>
+			<appearance/>
+			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>НаправлениеДеятельности</dataPath>
@@ -30,6 +36,8 @@
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
+			<appearance/>
+			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Организация</dataPath>
@@ -37,29 +45,64 @@
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
+			<appearance/>
+			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Подразделение</dataPath>
 			<field>Подразделение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение (заголовок)</v8:content>
+				</v8:item>
+			</title>
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
+			<appearance/>
+			<inputParameters/>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДвижения</dataPath>
+			<field>ВидДвижения</field>
+			<appearance/>
+			<inputParameters/>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<appearance/>
+			<inputParameters/>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатьяАктивПассив</dataPath>
+			<field>СтатьяАктивПассив</field>
+			<appearance/>
+			<inputParameters/>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ПрочиеАктивыПассивы.ВидИсточника,
+	ПрочиеАктивыПассивы.ВидИсточника КАК ВидИсточника,
 	ТИПЗНАЧЕНИЯ(ПрочиеАктивыПассивы.Регистратор) КАК ТипРегистратора,
-	ПрочиеАктивыПассивы.Статья,
-	ПрочиеАктивыПассивы.НаправлениеДеятельности,
-	ПрочиеАктивыПассивы.Организация,
-	ПрочиеАктивыПассивы.Подразделение
+	ПрочиеАктивыПассивы.Статья КАК Статья,
+	ПрочиеАктивыПассивы.НаправлениеДеятельности КАК НаправлениеДеятельности,
+	ПрочиеАктивыПассивы.Организация КАК Организация,
+	ВЫБОР
+		КОГДА ПрочиеАктивыПассивы.Подразделение = ЗНАЧЕНИЕ(Справочник.СтруктураПредприятия.ПустаяСсылка)
+			ТОГДА "Пустая ссылка"
+		ИНАЧЕ ПрочиеАктивыПассивы.Подразделение
+	КОНЕЦ КАК Подразделение,
+	ПрочиеАктивыПассивы.ВидДвижения КАК ВидДвижения,
+	ПрочиеАктивыПассивы.Сумма КАК Сумма,
+	ПрочиеАктивыПассивы.Статья.АктивПассив КАК СтатьяАктивПассив
 ИЗ
 	РегистрНакопления.ПрочиеАктивыПассивы КАК ПрочиеАктивыПассивы
 ГДЕ
-	ПрочиеАктивыПассивы.Регистратор В (&amp;Регистраторы)</query>
+	ПрочиеАктивыПассивы.Регистратор В(&amp;Регистраторы)</query>
 	</dataSet>
 	<calculatedField>
-		<dataPath>ЭтоСвязь	</dataPath>
+		<dataPath>ЭтоСвязь</dataPath>
 		<expression>Истина</expression>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -68,6 +111,120 @@
 			</v8:item>
 		</title>
 	</calculatedField>
+	<calculatedField>
+		<dataPath>ОрганизацияУникальная</dataPath>
+		<expression>СтрЗаменить(Строка(Организация) + Строка(ВидИсточника) + Строка(Статья), """","'")</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация уникальная</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ОрганизацияЗаголовок</dataPath>
+		<expression>СтрЗаменить(Строка(Организация),"""","'")</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация заголовок</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ТипРегистратораУникальный</dataPath>
+		<expression>Строка(ТипРегистратора) + Строка(Подразделение)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тип регистратора уникальный</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПодразделениеУникальное</dataPath>
+		<expression>СтрЗаменить(Строка(Подразделение) + Строка(ТипРегистратора),"""","'")</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Подразделение уникальное</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КодОформленияЭлемента</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Код оформления элемента</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>НаправлениеСвязи</dataPath>
+		<expression>Выбор когда ВидДвижения =Значение(ВидДвиженияНакопления.Приход) Тогда 1 
+когда ВидДвижения =Значение(ВидДвиженияНакопления.Расход) Тогда -1 Иначе 0 Конец</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Направление связи</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗаголовокСвязи</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заголовок связи</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>НачалоСвязи</dataPath>
+		<expression>ТипРегистратора</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало связи</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КонецСвязи</dataPath>
+		<expression>Статья</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец связи</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>ЗаголовокСвязи</dataPath>
+		<expression>Выбор когда Максимум(ВидДвижения )=Значение(ВидДвиженияНакопления.Приход) Тогда "Приход" 
+когда Максимум(ВидДвижения )=Значение(ВидДвиженияНакопления.Расход) Тогда "Расход" Иначе " " Конец  +";" + Строка(Сумма(Сумма))</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КодОформленияЭлемента</dataPath>
+		<expression>Выбор когда Максимум(ВидДвижения ) =Значение(ВидДвиженияНакопления.Приход) Тогда &amp;ОформлениеСвязиПриход
+когда Максимум(ВидДвижения ) =Значение(ВидДвиженияНакопления.Расход) Тогда &amp;ОформлениеСвязиРасход Иначе 0 Конец</expression>
+		<group>КонецСвязи</group>
+		<group>НачалоСвязи</group>
+	</totalField>
+	<totalField>
+		<dataPath>КодОформленияЭлемента</dataPath>
+		<expression>Выбор Когда СтатьяАктивПассив =Значение(Перечисление.ВидыСтатейУправленческогоБаланса.Актив) Тогда &amp;ОформлениеУзлаАктив 
+Когда СтатьяАктивПассив =Значение(Перечисление.ВидыСтатейУправленческогоБаланса.Пассив) Тогда &amp;ОформлениеУзлаПАссив  Конец</expression>
+		<group>СтатьяАктивПассив</group>
+	</totalField>
+	<totalField>
+		<dataPath>КодОформленияЭлемента</dataPath>
+		<expression>&amp;ОформлениеУзлаПоУмолчанию</expression>
+		<group>Статья</group>
+	</totalField>
 	<parameter>
 		<name>Регистраторы</name>
 		<title xsi:type="v8:LocalStringType">
@@ -107,6 +264,62 @@
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 	</parameter>
+	<parameter>
+		<name>ОформлениеСвязиПриход</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Оформление связи приход</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.граф_ОформленияЭлементовГрафа</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ОформлениеСвязиРасход</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Оформление связи расход</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.граф_ОформленияЭлементовГрафа</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ОформлениеУзлаАктив</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Оформление узла актив</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.граф_ОформленияЭлементовГрафа</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ОформлениеУзлаПассив</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Оформление узла пассив</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.граф_ОформленияЭлементовГрафа</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
@@ -116,17 +329,58 @@
 					<dcscor:parameter>Регистраторы</dcscor:parameter>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ОформлениеГруппыПоУмолчанию</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>97442b9c-cfdb-4a0a-8dfd-56a3110d31b7</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ОформлениеУзлаПоУмолчанию</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>227ce6e4-a49b-42c9-bccd-aa472b5b1109</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ОформлениеУзлаАктив</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>cd77accb-ce0a-4404-9c8f-a4356915b3aa</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ОформлениеУзлаПассив</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>732ccf69-c64c-4e2a-bc0a-f99003de9fe5</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ОформлениеСвязиРасход</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>2d9309db-9bff-4522-ad08-74d34a358b2e</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ОформлениеСвязиПриход</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>acbfe525-3530-454a-81b7-5e77f588a5d1</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>ВидИсточника</dcsset:field>
+						<dcsset:field>СтатьяАктивПассив</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 				</dcsset:groupItems>
 				<dcsset:order>
@@ -134,6 +388,9 @@
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КодОформленияЭлемента</dcsset:field>
+					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
@@ -141,6 +398,8 @@
 							<dcsset:field>Статья</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 						</dcsset:item>
 					</dcsset:groupItems>
 					<dcsset:order>
@@ -157,6 +416,8 @@
 						<dcsset:field>ТипРегистратора</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 				</dcsset:groupItems>
 				<dcsset:order>
@@ -169,19 +430,32 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>ТипРегистратора</dcsset:field>
+						<dcsset:field>НачалоСвязи</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Статья</dcsset:field>
+						<dcsset:field>КонецСвязи</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>[ЭтоСвязь	]</dcsset:field>
+						<dcsset:field>НаправлениеСвязи</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ЭтоСвязь</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 				</dcsset:groupItems>
 				<dcsset:order>
@@ -189,6 +463,12 @@
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаголовокСвязи</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КодОформленияЭлемента</dcsset:field>
+					</dcsset:item>
 				</dcsset:selection>
 			</dcsset:item>
 		</dcsset:settings>
