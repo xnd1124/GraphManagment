@@ -9,8 +9,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ВидИсточника</dataPath>
 			<field>ВидИсточника</field>
-			<appearance/>
-			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ТипРегистратора</dataPath>
@@ -21,14 +19,10 @@
 					<v8:content>Тип регистратора (заголовок)</v8:content>
 				</v8:item>
 			</title>
-			<appearance/>
-			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Статья</dataPath>
 			<field>Статья</field>
-			<appearance/>
-			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>НаправлениеДеятельности</dataPath>
@@ -36,8 +30,6 @@
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
-			<appearance/>
-			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Организация</dataPath>
@@ -45,8 +37,6 @@
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
-			<appearance/>
-			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Подразделение</dataPath>
@@ -60,26 +50,18 @@
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
-			<appearance/>
-			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ВидДвижения</dataPath>
 			<field>ВидДвижения</field>
-			<appearance/>
-			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Сумма</dataPath>
 			<field>Сумма</field>
-			<appearance/>
-			<inputParameters/>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СтатьяАктивПассив</dataPath>
 			<field>СтатьяАктивПассив</field>
-			<appearance/>
-			<inputParameters/>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
@@ -327,6 +309,7 @@
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Регистраторы</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ОформлениеГруппыПоУмолчанию</dcscor:parameter>
