@@ -26,7 +26,14 @@ if ('style' in node)  node.style.width = nodeWidth[0];
       		  },	
     	],
   		},
-	}
+  		layout: {
+    		type: 'dagre',
+    		sortByCombo: true,
+    		ranksep: 80,
+    		nodesep: 80,
+    		rankdir:'TB'
+  		},   
+  	}
 );
                                                         
 graph.data(data);

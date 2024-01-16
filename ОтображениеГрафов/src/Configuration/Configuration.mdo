@@ -51,7 +51,6 @@
   <commonTemplates>CommonTemplate.граф_БиблиотекаG6Версия4</commonTemplates>
   <commonTemplates>CommonTemplate.граф_ШаблонHTML</commonTemplates>
   <commonTemplates>CommonTemplate.граф_СкриптИнициализацииГрафа</commonTemplates>
-  <commonTemplates>CommonTemplate.граф_graphviz</commonTemplates>
   <commonModules>CommonModule.граф_РаботаСТекстомКлиентСервер</commonModules>
   <definedTypes>DefinedType.ДенежнаяСуммаЛюбогоЗнака</definedTypes>
   <commonForms>CommonForm.УпрощеннаяНастройкаСхемыКомпоновкиДанных</commonForms>

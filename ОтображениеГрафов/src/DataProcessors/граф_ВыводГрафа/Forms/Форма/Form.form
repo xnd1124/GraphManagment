@@ -609,58 +609,6 @@
     <fileDragMode>AsFileRef</fileDragMode>
     <rowFilter xsi:type="core:UndefinedValue"/>
   </items>
-  <items xsi:type="form:FormField">
-    <name>ОписаниеDOT</name>
-    <id>62</id>
-    <visible>true</visible>
-    <enabled>true</enabled>
-    <userVisible>
-      <for>
-        <role>Role.граф_ОсновнаяРоль</role>
-      </for>
-    </userVisible>
-    <dataPath xsi:type="form:DataPath">
-      <segments>ОписаниеDOT</segments>
-    </dataPath>
-    <extendedTooltip>
-      <name>ОписаниеDOTРасширеннаяПодсказка</name>
-      <id>64</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <type>Label</type>
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
-      <extInfo xsi:type="form:LabelDecorationExtInfo">
-        <horizontalAlign>Left</horizontalAlign>
-      </extInfo>
-    </extendedTooltip>
-    <contextMenu>
-      <name>ОписаниеDOTКонтекстноеМеню</name>
-      <id>63</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <autoFill>true</autoFill>
-    </contextMenu>
-    <type>TextDocumentField</type>
-    <editMode>Enter</editMode>
-    <showInHeader>true</showInHeader>
-    <headerHorizontalAlign>Left</headerHorizontalAlign>
-    <showInFooter>true</showInFooter>
-    <extInfo xsi:type="form:TextDocFieldExtInfo">
-      <width>50</width>
-      <autoMaxWidth>true</autoMaxWidth>
-      <height>10</height>
-      <autoMaxHeight>true</autoMaxHeight>
-      <horizontalStretch>true</horizontalStretch>
-      <verticalStretch>true</verticalStretch>
-    </extInfo>
-  </items>
   <items xsi:type="form:Table">
     <name>Узлы</name>
     <id>65</id>
@@ -1733,23 +1681,6 @@
         <common>true</common>
       </edit>
     </columns>
-  </attributes>
-  <attributes>
-    <name>ОписаниеDOT</name>
-    <title>
-      <key>ru</key>
-      <value>Описание DOT</value>
-    </title>
-    <id>16</id>
-    <valueType>
-      <types>TextDocument</types>
-    </valueType>
-    <view>
-      <common>true</common>
-    </view>
-    <edit>
-      <common>true</common>
-    </edit>
   </attributes>
   <attributes>
     <name>КешированныйСкриптИнициализации</name>
