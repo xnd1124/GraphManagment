@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3e470584-4d20-41c0-892d-9b9d32c8311e">
+  <name>граф_МакетыВызовСервера</name>
+  <synonym>
+    <key>ru</key>
+    <value>Макеты</value>
+  </synonym>
+  <server>true</server>
+  <serverCall>true</serverCall>
+</mdclass:CommonModule>

@@ -52,6 +52,8 @@
   <commonTemplates>CommonTemplate.граф_ШаблонHTML</commonTemplates>
   <commonTemplates>CommonTemplate.граф_СкриптИнициализацииГрафа</commonTemplates>
   <commonModules>CommonModule.граф_РаботаСТекстомКлиентСервер</commonModules>
+  <commonModules>CommonModule.граф_БиблиотекаG6Клиент</commonModules>
+  <commonModules>CommonModule.граф_МакетыВызовСервера</commonModules>
   <definedTypes>DefinedType.ДенежнаяСуммаЛюбогоЗнака</definedTypes>
   <commonForms>CommonForm.УпрощеннаяНастройкаСхемыКомпоновкиДанных</commonForms>
   <catalogs>Catalog.граф_ТипыОформленийЭлементовГрафов</catalogs>

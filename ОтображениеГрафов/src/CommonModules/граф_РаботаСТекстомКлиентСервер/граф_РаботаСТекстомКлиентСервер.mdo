@@ -6,7 +6,5 @@
     <value>Работа с текстом</value>
   </synonym>
   <clientManagedApplication>true</clientManagedApplication>
-  <server>true</server>
-  <externalConnection>true</externalConnection>
   <clientOrdinaryApplication>true</clientOrdinaryApplication>
 </mdclass:CommonModule>
