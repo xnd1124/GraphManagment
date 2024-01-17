@@ -6,6 +6,7 @@
   </head>
   <body>
     <div id="mountNode"></div>   
+    // библиотека G6 
     <script>
     function SavedGraph(){        
     	dataGraph = graph.save();
@@ -18,7 +19,6 @@
     }; 
     </script>
 	<script>
-    	//содержимое библиотеки
     	//данные графа
     	//инициализация графа
     </script>
