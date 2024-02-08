@@ -11,8 +11,8 @@
     <picture>CommonPicture.граф_ИконкаПодсистемы</picture>
   </picture>
   <content>Catalog.граф_ТипыОформленийЭлементовГрафов</content>
-  <content>Catalog.граф_ИсточникиДанныхГрафов</content>
   <content>DataProcessor.граф_ВыводГрафа</content>
   <content>Catalog.граф_ОформленияЭлементовГрафа</content>
   <content>Catalog.граф_СохраненныеГрафы</content>
+  <content>Catalog.граф_ИсточникиДанныхГрафов</content>
 </mdclass:Subsystem>

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bdb519a9-153a-40b3-bbc5-5b37d5b83a78">
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="90284932-cb1c-4927-8564-ba2f7f463ae0">
   <producedTypes>
-    <objectType typeId="6fba2041-89eb-4b8d-996b-0362064ce701" valueTypeId="b529e818-99ba-485a-9abb-3e28bc152e67"/>
-    <refType typeId="42acb6a5-b682-466d-bf3e-b33cbc7bedd0" valueTypeId="6f70046a-a3b1-415f-992f-8d6c83b990fd"/>
-    <selectionType typeId="f53e586b-87f9-4ac2-a952-bbef86386036" valueTypeId="feb81a12-8407-4b70-8ab2-a3359f83c14a"/>
-    <listType typeId="e74f57fb-4ac1-4812-b66c-82b014f82de2" valueTypeId="e6ea46d6-770e-4765-8acb-ac7ef71b4454"/>
-    <managerType typeId="bce646ed-d903-467b-bb17-3eee6916b9f2" valueTypeId="58c0dd67-d3fa-4fff-b3f2-1727c0de9531"/>
+    <objectType typeId="265dfd47-3bc5-400b-8a06-e2f83a886474" valueTypeId="f5b7a30a-6fc8-43be-ac82-52a5609f86db"/>
+    <refType typeId="f9b39b22-45b4-45d8-9ebd-81d17bc0c497" valueTypeId="86584964-423c-49d4-a83e-8b699b0ec2f0"/>
+    <selectionType typeId="4aa7fa46-79eb-401a-9e13-78107d25881d" valueTypeId="1d57d9c1-5224-4258-ad5a-defa35d8b209"/>
+    <listType typeId="d97d8ce4-72b2-4d92-b503-3bc41b35e1ad" valueTypeId="0c847566-5a92-49de-8078-54481d9af474"/>
+    <managerType typeId="a4470444-0761-424b-bba4-7f21dca9c108" valueTypeId="157ff91b-b9e3-4929-9137-e6e210e10e80"/>
   </producedTypes>
-  <name>граф_ИсточникиДанныхГрафов</name>
+  <name>граф_УдалитьИсточникиДанныхГрафов</name>
   <synonym>
     <key>ru</key>
     <value>Источники данных графов</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
-  <inputByString>Catalog.граф_ИсточникиДанныхГрафов.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.граф_УдалитьИсточникиДанныхГрафов.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.граф_УдалитьИсточникиДанныхГрафов.StandardAttribute.Description</inputByString>
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
   <standardAttributes>
     <dataHistory>Use</dataHistory>
@@ -101,22 +102,27 @@
   <hierarchical>true</hierarchical>
   <levelCount>2</levelCount>
   <foldersOnTop>true</foldersOnTop>
-  <descriptionLength>50</descriptionLength>
+  <codeLength>9</codeLength>
+  <descriptionLength>100</descriptionLength>
   <codeType>String</codeType>
   <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
   <defaultPresentation>AsDescription</defaultPresentation>
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
-  <defaultObjectForm>Catalog.граф_ИсточникиДанныхГрафов.Form.ФормаЭлемента</defaultObjectForm>
-  <attributes uuid="fa74b5de-7e28-4c9c-bcb3-6e83ae8b644b">
-    <name>ТекстЗапроса</name>
+  <defaultObjectForm>Catalog.граф_УдалитьИсточникиДанныхГрафов.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="e1a75252-1366-49e7-9b90-8e364cb313d0">
+    <name>ИмяШаблонаСКД</name>
     <synonym>
       <key>ru</key>
-      <value>Текст запроса</value>
+      <value>Имя шаблона СКД</value>
     </synonym>
     <type>
       <types>String</types>
-      <stringQualifiers/>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
@@ -124,7 +130,49 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <forms uuid="719cbcd1-dd7d-416b-a0b2-9eac6e7e476c">
+  <attributes uuid="eeb368ff-bc44-4ae0-b345-a0df2207abec">
+    <name>ХранилищеНастроекКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Хранилище настроек компоновки данных</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8c49b210-b5d8-46cd-8eb1-97d1f8aab24c">
+    <name>ХранилищеСхемыКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Хранилище схемы компоновки данных</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Storage of data composition schema</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Произвольная схема компоновки данных для получения значений цен номенклатуры</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Arbitrary data composition schema for obtaining values of item prices</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="129c5947-d09f-4427-8eab-539c238fcc80">
     <name>ФормаЭлемента</name>
     <synonym>
       <key>ru</key>
@@ -133,4 +181,20 @@
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
   </forms>
+  <templates uuid="ab044fb6-54db-407a-bccb-9ef6d5d76630">
+    <name>ОсновнаяСхема</name>
+    <synonym>
+      <key>ru</key>
+      <value>Демонстрационная схема</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="e018be12-f8cc-4539-a3d4-9a7dca529ffd">
+    <name>ПрочиеАктивыПассивы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прочие активы пассивы</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
 </mdclass:Catalog>

@@ -1344,7 +1344,7 @@
     </title>
     <id>2</id>
     <valueType>
-      <types>CatalogRef.граф_ИсточникиДанныхГрафов</types>
+      <types>CatalogRef.граф_УдалитьИсточникиДанныхГрафов</types>
     </valueType>
     <view>
       <common>true</common>

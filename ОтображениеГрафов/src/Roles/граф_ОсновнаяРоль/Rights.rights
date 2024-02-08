@@ -35,7 +35,7 @@
 		</right>
 	</object>
 	<object>
-		<name>Catalog.граф_ИсточникиДанныхГрафов</name>
+		<name>Catalog.граф_УдалитьИсточникиДанныхГрафов</name>
 		<right>
 			<name>Delete</name>
 			<value>false</value>

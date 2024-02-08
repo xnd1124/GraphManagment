@@ -57,18 +57,16 @@
   <definedTypes>DefinedType.ДенежнаяСуммаЛюбогоЗнака</definedTypes>
   <commonForms>CommonForm.УпрощеннаяНастройкаСхемыКомпоновкиДанных</commonForms>
   <catalogs>Catalog.граф_ТипыОформленийЭлементовГрафов</catalogs>
-  <catalogs>Catalog.граф_ИсточникиДанныхГрафов</catalogs>
+  <catalogs>Catalog.граф_УдалитьИсточникиДанныхГрафов</catalogs>
   <catalogs>Catalog.граф_ОформленияЭлементовГрафа</catalogs>
   <catalogs>Catalog.граф_СохраненныеГрафы</catalogs>
-  <catalogs>Catalog.Организации</catalogs>
-  <catalogs>Catalog.СтруктураПредприятия</catalogs>
-  <catalogs>Catalog.НаправленияДеятельности</catalogs>
+  <catalogs>Catalog.граф_ИсточникиДанныхГрафов</catalogs>
+  <catalogs>Catalog.граф_ОписанияГрафов</catalogs>
   <enums>Enum.граф_КомпонентыГрафа</enums>
   <enums>Enum.ВидыСтатейУправленческогоБаланса</enums>
   <enums>Enum.ХозяйственныеОперации</enums>
   <enums>Enum.ВидыИсточниковДвижений</enums>
   <enums>Enum.ИсточникиУправленческогоБаланса</enums>
   <dataProcessors>DataProcessor.граф_ВыводГрафа</dataProcessors>
-  <accumulationRegisters>AccumulationRegister.ПрочиеАктивыПассивы</accumulationRegisters>
   <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.СтатьиАктивовПассивов</chartsOfCharacteristicTypes>
 </mdclass:Configuration>
