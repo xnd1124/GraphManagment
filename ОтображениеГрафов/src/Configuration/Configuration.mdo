@@ -54,6 +54,7 @@
   <commonModules>CommonModule.граф_РаботаСТекстомКлиентСервер</commonModules>
   <commonModules>CommonModule.граф_БиблиотекаG6Клиент</commonModules>
   <commonModules>CommonModule.граф_МакетыВызовСервера</commonModules>
+  <commonModules>CommonModule.граф_ФормированиеГрафа</commonModules>
   <definedTypes>DefinedType.ДенежнаяСуммаЛюбогоЗнака</definedTypes>
   <commonForms>CommonForm.УпрощеннаяНастройкаСхемыКомпоновкиДанных</commonForms>
   <catalogs>Catalog.граф_ТипыОформленийЭлементовГрафов</catalogs>
