@@ -200,6 +200,23 @@
       <dataHistory>Use</dataHistory>
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
+    <attributes uuid="5c29dc01-ee54-4f39-acde-47666dc6fedc">
+      <name>ЗаголовокУзла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заголовок узла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
   </tabularSections>
   <tabularSections uuid="0be6ab6d-f4db-4431-97ff-ba25c1ef6adf">
     <producedTypes>
@@ -283,6 +300,23 @@
         <types>String</types>
         <stringQualifiers>
           <length>36</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="f97f137d-21ce-4774-91d8-cfd0b6435754">
+      <name>ЗаголовокРебра</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заголовок</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
         </stringQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
