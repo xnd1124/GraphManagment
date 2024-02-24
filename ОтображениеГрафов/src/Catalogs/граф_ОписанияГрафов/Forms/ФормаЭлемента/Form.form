@@ -2072,7 +2072,7 @@
       <name>ИдентификаторПриемника</name>
       <title>
         <key>ru</key>
-        <value>Идентификатор источника</value>
+        <value>Идентификатор приемника</value>
       </title>
       <id>15</id>
       <valueType>
