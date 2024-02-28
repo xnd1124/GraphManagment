@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mdclass:CommonPicture xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="9f68f7f4-a9dd-43c8-b3b5-4a34079e134d" extendedConfigurationObject="ab5b0155-a4b1-47a1-ad87-12365dde20c1">
-  <name>СохранитьВариантОтчета</name>
-  <objectBelonging>Adopted</objectBelonging>
-  <extension xsi:type="mdclassExtension:CommonPictureExtension">
-    <extendedConfigurationObject>Checked</extendedConfigurationObject>
-  </extension>
-</mdclass:CommonPicture>

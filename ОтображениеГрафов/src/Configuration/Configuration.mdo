@@ -45,8 +45,6 @@
   </languages>
   <subsystems>Subsystem.граф_ОтображениеГрафов</subsystems>
   <commonPictures>CommonPicture.граф_ИконкаПодсистемы</commonPictures>
-  <commonPictures>CommonPicture.ВыбратьВариантОтчета</commonPictures>
-  <commonPictures>CommonPicture.СохранитьВариантОтчета</commonPictures>
   <roles>Role.граф_ОсновнаяРоль</roles>
   <commonTemplates>CommonTemplate.граф_БиблиотекаG6Версия4</commonTemplates>
   <commonTemplates>CommonTemplate.граф_ШаблонHTML</commonTemplates>
@@ -55,19 +53,9 @@
   <commonModules>CommonModule.граф_БиблиотекаG6Клиент</commonModules>
   <commonModules>CommonModule.граф_МакетыВызовСервера</commonModules>
   <commonModules>CommonModule.граф_ФормированиеГрафа</commonModules>
-  <definedTypes>DefinedType.ДенежнаяСуммаЛюбогоЗнака</definedTypes>
-  <commonForms>CommonForm.УпрощеннаяНастройкаСхемыКомпоновкиДанных</commonForms>
   <catalogs>Catalog.граф_ТипыОформленийЭлементовГрафов</catalogs>
-  <catalogs>Catalog.граф_УдалитьИсточникиДанныхГрафов</catalogs>
   <catalogs>Catalog.граф_ОформленияЭлементовГрафа</catalogs>
-  <catalogs>Catalog.граф_СохраненныеГрафы</catalogs>
   <catalogs>Catalog.граф_ИсточникиДанныхГрафов</catalogs>
   <catalogs>Catalog.граф_ОписанияГрафов</catalogs>
   <enums>Enum.граф_КомпонентыГрафа</enums>
-  <enums>Enum.ВидыСтатейУправленческогоБаланса</enums>
-  <enums>Enum.ХозяйственныеОперации</enums>
-  <enums>Enum.ВидыИсточниковДвижений</enums>
-  <enums>Enum.ИсточникиУправленческогоБаланса</enums>
-  <dataProcessors>DataProcessor.граф_ВыводГрафа</dataProcessors>
-  <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.СтатьиАктивовПассивов</chartsOfCharacteristicTypes>
 </mdclass:Configuration>
