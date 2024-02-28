@@ -149,6 +149,21 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="0326b5cd-cb9c-4436-b749-ebf959387df8">
+    <name>Компонент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Компонент</value>
+    </synonym>
+    <type>
+      <types>EnumRef.граф_КомпонентыГрафа</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <forms uuid="23739223-dfd2-43fd-967e-f2cf55df25d6">
     <name>ФормаЭлемента</name>
     <synonym>

@@ -239,6 +239,12 @@
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.Компонент</name>
+        <value xsi:type="core:ReferenceValue">
+          <value>Enum.граф_КомпонентыГрафа.EnumValue.Ребро</value>
+        </value>
+      </choiceParameters>
       <dataHistory>Use</dataHistory>
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
