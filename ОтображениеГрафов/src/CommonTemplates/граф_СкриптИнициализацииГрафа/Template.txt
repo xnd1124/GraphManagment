@@ -35,7 +35,7 @@ if ('style' in node)  node.style.width = nodeWidth[0];
   		},   
   	}
 );
-                                                        
+//G6.Util.processParallelEdges(data.edges);
 graph.data(data);
 graph.render();  
 
