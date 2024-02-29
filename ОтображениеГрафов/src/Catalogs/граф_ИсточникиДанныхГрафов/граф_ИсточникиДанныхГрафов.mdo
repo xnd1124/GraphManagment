@@ -196,6 +196,51 @@
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
   </tabularSections>
+  <tabularSections uuid="bf4552e5-c33e-4f5e-89a8-ad15ef7874d1">
+    <producedTypes>
+      <objectType typeId="cbb76ff7-3e62-4ab8-b4ea-57af0fe7f58a" valueTypeId="f795380a-17e8-4989-9607-86e2ca0d96a4"/>
+      <rowType typeId="abade019-f1a9-4ffd-98ee-5b8ecceb0164" valueTypeId="49f65821-e07e-49c7-a29d-44340026bee1"/>
+    </producedTypes>
+    <name>ПоляРесурсы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поля ресурсы</value>
+    </synonym>
+    <attributes uuid="6c9126a2-9ef2-44f7-a783-9610fd016220">
+      <name>ИмяПоля</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя поля</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="461dea1c-da2e-49a2-8479-150fe6885571">
+      <name>АгрегирующаяФункция</name>
+      <synonym>
+        <key>ru</key>
+        <value>Агрегирующая функция</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
   <forms uuid="719cbcd1-dd7d-416b-a0b2-9eac6e7e476c">
     <name>ФормаЭлемента</name>
     <synonym>
