@@ -121,6 +121,10 @@
     <type>
       <types>Boolean</types>
     </type>
+    <toolTip>
+      <key>ru</key>
+      <value>При постороении связи направление связей в JSON будет чередоваться для расположения частей в центре графа</value>
+    </toolTip>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fillValue xsi:type="core:UndefinedValue"/>
@@ -162,7 +166,7 @@
       <type>
         <types>String</types>
         <stringQualifiers>
-          <length>100</length>
+          <length>200</length>
         </stringQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
@@ -272,7 +276,7 @@
       <type>
         <types>String</types>
         <stringQualifiers>
-          <length>100</length>
+          <length>200</length>
         </stringQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
@@ -289,7 +293,7 @@
       <type>
         <types>String</types>
         <stringQualifiers>
-          <length>100</length>
+          <length>200</length>
         </stringQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>

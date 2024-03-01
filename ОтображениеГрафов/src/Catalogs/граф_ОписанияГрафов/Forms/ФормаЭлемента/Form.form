@@ -1982,7 +1982,7 @@
       <valueType>
         <types>String</types>
         <stringQualifiers>
-          <length>100</length>
+          <length>400</length>
         </stringQualifiers>
       </valueType>
       <view>
@@ -2090,7 +2090,7 @@
       <valueType>
         <types>String</types>
         <stringQualifiers>
-          <length>100</length>
+          <length>400</length>
         </stringQualifiers>
       </valueType>
       <view>
@@ -2182,7 +2182,7 @@
       <valueType>
         <types>String</types>
         <stringQualifiers>
-          <length>100</length>
+          <length>400</length>
         </stringQualifiers>
       </valueType>
       <view>
@@ -2220,7 +2220,7 @@
       <valueType>
         <types>String</types>
         <stringQualifiers>
-          <length>100</length>
+          <length>400</length>
         </stringQualifiers>
       </valueType>
       <view>
