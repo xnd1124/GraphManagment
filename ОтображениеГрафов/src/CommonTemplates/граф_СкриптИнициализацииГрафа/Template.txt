@@ -47,4 +47,64 @@ if (typeof window !== 'undefined')
     graph.changeSize(container.scrollWidth, container.scrollHeight);
   };
 
+graph.on("edge:mousedown", (ev) => {
+      if (dragingLabel) {
+        draggableItem = ev.target;
+        labelx = ev.target.attr("x");
+        labely = ev.target.attr("y");
+      }
+      else {
+        draggableItem = ev.item;
+      }
+      startx = ev.x;
+      starty = ev.y;
+    });
+
+    graph.on("mouseup", (ev) => {
+      startx = 0;
+      starty = 0;
+      draggableItem = 0;
+      labelx = 0;
+      labely = 0;
+      dragingLabel = false;
+    });
+
+    graph.on("mousemove", (ev) => {
+      if (draggableItem == 0) return;
+      if (dragingLabel) {
+        offsetx = labelx - startx + ev.x;
+        offsety = labely - starty + ev.y;
+        draggableItem.attr({
+          x: offsetx,
+          y: offsety,
+        });
+      }
+      else {
+        offsetx = startx - ev.x;
+        const currentModel = draggableItem.getModel();
+        if (currentModel.startPoint.x > currentModel.endPoint.x) offsety = starty - ev.y;
+        else offsety = -starty + ev.y;
+
+        offset = offsetx + offsety;
+        const model = {
+          curveOffset: offset
+        };
+        graph.updateItem(draggableItem, model);
+      }
+    });
+
+    graph.on("keydown", (ev) => {
+      if ((ev.key = "Alt")) dragingLabel = true;
+    });
+
+    graph.on("keyup", (ev) => {
+      if ((ev.key = "Alt")) dragingLabel = false;
+    });
+
+    let startx = 0;
+    let starty = 0;
+    let labelx = 0;
+    let labely = 0;
+    let draggableItem = 0;
+    let dragingLabel = false;
       
