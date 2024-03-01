@@ -240,6 +240,10 @@
         <dataPath xsi:type="form:DataPath">
           <segments>Узлы.ИдентификаторУзла</segments>
         </dataPath>
+        <handlers>
+          <event>OnChange</event>
+          <name>УзлыИдентификаторУзлаПриИзменении</name>
+        </handlers>
         <extendedTooltip>
           <name>УзлыИдентификаторУзлаРасширеннаяПодсказка</name>
           <id>87</id>
