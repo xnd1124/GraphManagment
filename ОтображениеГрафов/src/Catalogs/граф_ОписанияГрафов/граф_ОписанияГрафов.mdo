@@ -112,6 +112,21 @@
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
   <defaultObjectForm>Catalog.граф_ОписанияГрафов.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="11f4fadb-a974-43cd-93bf-7c5d5e9c522b">
+    <name>ОптимизироватьСвязи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оптимизировать связи</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <tabularSections uuid="90cd3179-aec6-4f36-8b52-381d98d4bf1e">
     <producedTypes>
       <objectType typeId="497d9b02-f32e-4f6e-97e0-d333d30172ef" valueTypeId="a6251e57-88c0-4891-bfd4-b6378d87f2a0"/>
