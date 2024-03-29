@@ -182,6 +182,10 @@
       </synonym>
       <type>
         <types>CatalogRef.граф_ОформленияЭлементовГрафа</types>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>

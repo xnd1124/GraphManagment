@@ -2115,6 +2115,10 @@
       <id>7</id>
       <valueType>
         <types>CatalogRef.граф_ОформленияЭлементовГрафа</types>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
       </valueType>
       <view>
         <common>true</common>
