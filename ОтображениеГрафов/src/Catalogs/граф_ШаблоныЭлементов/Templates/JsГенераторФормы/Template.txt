@@ -1,0 +1,959 @@
+// Глобальные переменные для хранения состояния
+let formData = {};
+let currentSchema = null;
+
+// Основная функция инициализации
+function initSchemaForm() {
+    const formContainer = document.getElementById('formContainer');
+    
+    // Загружаем схему и генерируем интерфейс
+    loadSchemaAndGenerateForm();
+}
+
+// Загрузка схемы и генерация формы
+async function loadSchemaAndGenerateForm() {
+    try {
+        // Используем схему из глобальной переменной (загруженной из schema-data.js)
+        if (typeof window.defaultSchema === 'undefined') {
+            throw new Error('Схема не найдена. Убедитесь что файл schema-data.js загружен.');
+        }
+        
+        const schema = window.defaultSchema;
+        
+        // Генерируем интерфейс
+        generateForm();
+        
+    } catch (error) {
+        const formContainer = document.getElementById('formContainer');
+        formContainer.innerHTML = `
+            <div style="color: #dc3545; padding: 20px; border: 1px solid #dc3545; border-radius: 6px; background: #fff5f5;">
+                <strong>Ошибка загрузки схемы:</strong> ${error.message}
+            </div>
+        `;
+    }
+}
+
+// Генерация формы
+function generateForm() {
+    const formContainer = document.getElementById('formContainer');
+    
+    try {
+        const schema = window.defaultSchema;
+        formData = {};
+        currentSchema = schema; // Сохраняем схему для валидации
+        formContainer.innerHTML = '';
+        
+        // Инициализируем значения по умолчанию
+        initializeDefaultValues(schema);
+        
+        const form = createForm(schema);
+        formContainer.appendChild(form);
+        
+        // Инициализируем условные поля после создания формы
+        setTimeout(() => {
+            initializeConditionalFields(schema);
+        }, 100);
+        
+        // Добавляем кнопку экспорта
+        addExportButton(formContainer);
+        
+    } catch (error) {
+        formContainer.innerHTML = `
+            <div style="color: #dc3545; padding: 20px; border: 1px solid #dc3545; border-radius: 6px; background: #fff5f5;">
+                <strong>Ошибка генерации формы:</strong> ${error.message}
+            </div>
+        `;
+    }
+}
+
+// Инициализация значений по умолчанию
+function initializeDefaultValues(schema) {
+    if (schema.type === 'object' && schema.properties) {
+        Object.keys(schema.properties).forEach(fieldName => {
+            const fieldSchema = schema.properties[fieldName];
+            if (fieldSchema.default !== undefined) {
+                updateFormData(fieldName, fieldSchema.default);
+            }
+        });
+    }
+}
+
+// Создание основной формы
+function createForm(schema) {
+    const form = document.createElement('div');
+    form.className = 'form-container';
+    
+    if (schema.type === 'object' && schema.properties) {
+        Object.keys(schema.properties).forEach(fieldName => {
+            const fieldSchema = schema.properties[fieldName];
+            const fieldPath = fieldName;
+            
+            const formGroup = document.createElement('div');
+            formGroup.className = 'form-group';
+            formGroup.setAttribute('data-path', fieldPath);
+            
+            createField(formGroup, fieldSchema, fieldPath, fieldName);
+            form.appendChild(formGroup);
+        });
+    }
+    
+    return form;
+}
+
+// Создание поля формы
+function createField(container, schema, path, fieldName) {
+    const isRequired = isRequiredField(schema, path);
+    
+    // Проверяем видимость по условию visibleIf
+    const isVisible = isFieldVisible(schema, path);
+    if (!isVisible) {
+        container.style.display = 'none';
+        container.setAttribute('data-conditional', 'true');
+    }
+    
+    // Проверяем, есть ли условие для этого поля через if/then/else
+    const isConditional = isConditionalField(path);
+    if (isConditional && !isConditionMet(path)) {
+        container.style.display = 'none';
+        container.setAttribute('data-conditional', 'true');
+    }
+    
+    switch (schema.type) {
+        case 'string':
+            createStringField(container, schema, path, fieldName, isRequired);
+            break;
+        case 'number':
+        case 'integer':
+            createNumberField(container, schema, path, fieldName, isRequired);
+            break;
+        case 'boolean':
+            createBooleanField(container, schema, path, fieldName, isRequired);
+            break;
+        case 'array':
+            createArrayForm(container, schema, path);
+            break;
+        case 'object':
+            createObjectForm(container, schema, path);
+            break;
+        default:
+            createStringField(container, schema, path, fieldName, isRequired);
+    }
+}
+
+// Создание текстового поля
+function createStringField(container, schema, path, fieldName, isRequired) {
+    // Проверяем, является ли поле цветовым
+    const isColor = isColorField(schema, fieldName);
+    
+    if (schema.enum && !isColor) {
+        // Создаем выпадающий список для enum
+        createSelectField(container, schema, path, fieldName, isRequired);
+    } else if (isColor) {
+        // Создаем цветовой пикер
+        createColorField(container, schema, path, fieldName, isRequired);
+    } else {
+        // Создаем обычное текстовое поле
+        const label = document.createElement('label');
+        label.className = 'form-label';
+        label.htmlFor = `field-${path.replace(/\./g, '-')}`;
+        label.innerHTML = `${fieldName}${isRequired ? ' <span class="required">*</span>' : ''}`;
+        container.appendChild(label);
+        
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'form-input';
+        input.id = `field-${path.replace(/\./g, '-')}`;
+        input.placeholder = schema.description || '';
+        
+        if (schema.minLength) {
+            input.minLength = schema.minLength;
+        }
+        if (schema.maxLength) {
+            input.maxLength = schema.maxLength;
+        }
+        
+        input.addEventListener('input', (e) => {
+            validateAndUpdate(input, path, e.target.value, schema);
+            
+            // Генерируем событие для 1С
+            const event = new Event('ПриНажатии', { bubbles: true });
+            input.dispatchEvent(event);
+        });
+        
+        container.appendChild(input);
+    }
+}
+
+// Создание поля выбора (select)
+function createSelectField(container, schema, path, fieldName, isRequired) {
+    const label = document.createElement('label');
+    label.className = 'form-label';
+    label.htmlFor = `field-${path.replace(/\./g, '-')}`;
+    label.innerHTML = `${fieldName}${isRequired ? ' <span class="required">*</span>' : ''}`;
+    container.appendChild(label);
+    
+    const select = document.createElement('select');
+    select.className = 'form-select';
+    select.id = `field-${path.replace(/\./g, '-')}`;
+    
+    // Добавляем пустой вариант для обязательных полей
+    if (isRequired) {
+        const emptyOption = document.createElement('option');
+        emptyOption.value = '';
+        emptyOption.textContent = '-- Выберите значение --';
+        select.appendChild(emptyOption);
+    }
+    
+    // Добавляем варианты из enum
+    schema.enum.forEach(value => {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
+        select.appendChild(option);
+    });
+    
+    select.addEventListener('change', (e) => {
+        updateFormData(path, e.target.value);
+        updateConditionalFields(path, e.target.value);
+        
+        // Генерируем событие для 1С
+        const event = new Event('click', { bubbles: true });
+        select.dispatchEvent(event);
+        
+        // Валидация обязательных полей
+        if (isRequired && !e.target.value) {
+            select.classList.add('error');
+            let errorDiv = select.parentNode.querySelector('.error-message');
+            if (!errorDiv) {
+                errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                select.parentNode.appendChild(errorDiv);
+            }
+            errorDiv.textContent = 'Это поле обязательно для заполнения';
+        } else {
+            select.classList.remove('error');
+            const errorDiv = select.parentNode.querySelector('.error-message');
+            if (errorDiv) errorDiv.remove();
+        }
+    });
+    
+    // Дополнительное событие для 1С
+    select.addEventListener('click', (e) => {
+        const event = new Event('ПриНажатии', { bubbles: true });
+        select.dispatchEvent(event);
+    });
+    
+    // Устанавливаем значение по умолчанию
+    if (schema.default) {
+        select.value = schema.default;
+        updateFormData(path, schema.default);
+    }
+    
+    container.appendChild(select);
+}
+
+// Создание числового поля
+function createNumberField(container, schema, path, fieldName, isRequired) {
+    const label = document.createElement('label');
+    label.className = 'form-label';
+    label.htmlFor = `field-${path.replace(/\./g, '-')}`;
+    label.innerHTML = `${fieldName}${isRequired ? ' <span class="required">*</span>' : ''}`;
+    container.appendChild(label);
+    
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.className = 'form-input';
+    input.id = `field-${path.replace(/\./g, '-')}`;
+    input.placeholder = schema.description || '';
+    
+    if (schema.minimum !== undefined) {
+        input.min = schema.minimum;
+    }
+    if (schema.maximum !== undefined) {
+        input.max = schema.maximum;
+    }
+    if (schema.type === 'integer') {
+        input.step = '1';
+    }
+    
+    input.addEventListener('input', (e) => {
+        validateAndUpdate(input, path, parseFloat(e.target.value), schema);
+        
+        // Генерируем событие для 1С
+        const event = new Event('ПриНажатии', { bubbles: true });
+        input.dispatchEvent(event);
+    });
+    
+    container.appendChild(input);
+}
+
+// Создание булевого поля (checkbox)
+function createBooleanField(container, schema, path, fieldName, isRequired) {
+    const checkboxWrapper = document.createElement('div');
+    checkboxWrapper.className = 'checkbox-wrapper';
+    
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.className = 'form-radio';
+    input.id = `field-${path.replace(/\./g, '-')}`;
+    
+    const label = document.createElement('label');
+    label.htmlFor = `field-${path.replace(/\./g, '-')}`;
+    label.innerHTML = `${fieldName}${isRequired ? ' <span class="required">*</span>' : ''}`;
+    
+    input.addEventListener('change', (e) => {
+        updateFormData(path, e.target.checked);
+        updateConditionalFields(path, e.target.checked);
+        
+        // Генерируем событие для 1С
+        const event = new Event('ПриНажатии', { bubbles: true });
+        input.dispatchEvent(event);
+    });
+    
+    // Устанавливаем значение по умолчанию
+    if (schema.default !== undefined) {
+        input.checked = schema.default;
+        updateFormData(path, schema.default);
+    }
+    
+    checkboxWrapper.appendChild(input);
+    checkboxWrapper.appendChild(label);
+    container.appendChild(checkboxWrapper);
+}
+
+// Создание формы для объекта
+function createObjectForm(container, schema, path) {
+    const objectContainer = document.createElement('div');
+    objectContainer.className = 'object-container';
+    objectContainer.id = `object-${path.replace(/\./g, '-')}`;
+    
+    // Создаем заголовок с возможностью сворачивания
+    const header = document.createElement('div');
+    header.className = 'object-header';
+    
+    const title = document.createElement('div');
+    title.className = 'object-title';
+    title.textContent = schema.description || path;
+    
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'collapse-toggle';
+    toggleBtn.innerHTML = '▼';
+    toggleBtn.onclick = () => toggleCollapse(objectContainer);
+    
+    header.appendChild(title);
+    header.appendChild(toggleBtn);
+    
+    const content = document.createElement('div');
+    content.className = 'object-content';
+    
+    if (schema.properties) {
+        Object.keys(schema.properties).forEach(fieldName => {
+            const fieldSchema = schema.properties[fieldName];
+            const fieldPath = `${path}.${fieldName}`;
+            
+            const formGroup = document.createElement('div');
+            formGroup.className = 'form-group';
+            formGroup.setAttribute('data-path', fieldPath);
+            
+            createField(formGroup, fieldSchema, fieldPath, fieldName);
+            content.appendChild(formGroup);
+        });
+    }
+    
+    objectContainer.appendChild(header);
+    objectContainer.appendChild(content);
+    container.appendChild(objectContainer);
+}
+
+// Создание формы для массива
+function createArrayForm(container, schema, path) {
+    const arrayContainer = document.createElement('div');
+    arrayContainer.className = 'array-container';
+    arrayContainer.id = `array-${path.replace(/\./g, '-')}`;
+    
+    // Создаем заголовок с возможностью сворачивания
+    const header = document.createElement('div');
+    header.className = 'array-header';
+    
+    const title = document.createElement('div');
+    title.className = 'array-title';
+    title.textContent = schema.description || path;
+    
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'collapse-toggle';
+    toggleBtn.innerHTML = '▼';
+    toggleBtn.onclick = () => toggleCollapse(arrayContainer);
+    
+    header.appendChild(title);
+    header.appendChild(toggleBtn);
+    
+    const content = document.createElement('div');
+    content.className = 'array-content';
+    
+    // Добавляем контейнер для элементов массива
+    const itemsContainer = document.createElement('div');
+    itemsContainer.className = 'array-items';
+    
+    // Добавляем кнопку для добавления новых элементов
+    const addBtn = document.createElement('button');
+    addBtn.className = 'add-item-btn';
+    addBtn.textContent = '+ Добавить элемент';
+    const self = this; // Сохраняем контекст
+    addBtn.onclick = () => addArrayItem(itemsContainer, schema.items, path);
+    
+    content.appendChild(itemsContainer);
+    content.appendChild(addBtn);
+    
+    arrayContainer.appendChild(header);
+    arrayContainer.appendChild(content);
+    container.appendChild(arrayContainer);
+}
+
+// Добавление элемента массива
+function addArrayItem(container, itemSchema, arrayPath) {
+    const itemIndex = container.children.length;
+    const itemPath = `${arrayPath}[${itemIndex}]`;
+    
+    const itemContainer = document.createElement('div');
+    itemContainer.className = 'array-item';
+    itemContainer.style.position = 'relative';
+    
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'remove-item-btn';
+    removeBtn.textContent = '×';
+    removeBtn.onclick = () => {
+        itemContainer.remove();
+        updateArrayData(arrayPath);
+    };
+    itemContainer.appendChild(removeBtn);
+    
+    createField(itemContainer, itemSchema, itemPath, `Элемент ${itemIndex + 1}`);
+    container.appendChild(itemContainer);
+}
+
+// Проверка, является ли поле цветовым
+function isColorField(schema, fieldName) {
+    // Проверяем, является ли поле цветовым по разным критериям
+    const lowerFieldName = fieldName.toLowerCase();
+    const lowerDescription = (schema.description || '').toLowerCase();
+    
+    return (
+        lowerFieldName.includes('color') ||
+        lowerFieldName.includes('colour') ||
+        lowerDescription.includes('цвет') ||
+        lowerDescription.includes('color') ||
+        lowerDescription.includes('colour') ||
+        schema.format === 'color' ||
+        schema.pattern && schema.pattern.includes('#')
+    );
+}
+
+// Создание цветового поля
+function createColorField(container, schema, path, fieldName, isRequired) {
+    const label = document.createElement('label');
+    label.className = 'form-label';
+    label.htmlFor = `field-${path.replace(/\./g, '-')}`;
+    label.innerHTML = `${fieldName}${isRequired ? ' <span class="required">*</span>' : ''}`;
+    container.appendChild(label);
+    
+    const colorPickerWrapper = document.createElement('div');
+    colorPickerWrapper.className = 'color-picker-wrapper';
+    
+    // Создаем скрытый input для хранения значения
+    const hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.id = `field-${path.replace(/\./g, '-')}`;
+    hiddenInput.className = 'form-input';
+    
+    // Создаем визуальный индикатор цвета
+    const colorIndicator = document.createElement('div');
+    colorIndicator.className = 'color-input';
+    colorIndicator.style.backgroundColor = schema.default || '#000000';
+    colorIndicator.style.cursor = 'pointer';
+    
+    // Создаем текстовое поле для ввода HEX
+    const colorText = document.createElement('input');
+    colorText.type = 'text';
+    colorText.className = 'form-input color-text';
+    colorText.placeholder = '#000000';
+    colorText.value = schema.default || '#000000';
+    colorText.maxLength = 7;
+    
+    // Создаем выпадающее меню с палитрой
+    const dropdown = document.createElement('div');
+    dropdown.className = 'color-dropdown';
+    
+    // Заголовок выпадающего меню
+    const dropdownHeader = document.createElement('div');
+    dropdownHeader.className = 'color-dropdown-header';
+    dropdownHeader.innerHTML = `
+        <span>Выберите цвет</span>
+        <button class="color-dropdown-close">&times;</button>
+    `;
+    dropdown.appendChild(dropdownHeader);
+    
+    // Палитра цветов
+    const palette = document.createElement('div');
+    palette.className = 'color-palette';
+    
+    const colors = [
+        '#000000', '#FFFFFF', '#FF0000', '#00FF00', '#0000FF', '#FFFF00',
+        '#FF00FF', '#00FFFF', '#800000', '#008000', '#000080', '#808000',
+        '#800080', '#008080', '#C0C0C0', '#808080', '#FFA500', '#A52A2A',
+        '#800080', '#FF1493', '#00CED1', '#FFD700', '#32CD32', '#FF69B4'
+    ];
+    
+    colors.forEach(color => {
+        const colorOption = document.createElement('div');
+        colorOption.className = 'color-option';
+        colorOption.style.backgroundColor = color;
+        colorOption.title = color;
+        
+        colorOption.addEventListener('click', () => {
+            selectColor(color, colorIndicator, colorText, hiddenInput, path);
+        });
+        
+        palette.appendChild(colorOption);
+    });
+    
+    // Добавляем нативный color picker
+    const nativePicker = document.createElement('div');
+    nativePicker.className = 'native-picker-container';
+    nativePicker.innerHTML = `
+        <label>Точный цвет:</label>
+        <input type="color" id="native-${path.replace(/\./g, '-')}" value="${schema.default || '#000000'}">
+    `;
+    
+    const nativeColorInput = nativePicker.querySelector('input[type="color"]');
+    nativeColorInput.addEventListener('change', (e) => {
+        selectColor(e.target.value, colorIndicator, colorText, hiddenInput, path);
+    });
+    
+    dropdown.appendChild(palette);
+    dropdown.appendChild(nativePicker);
+    
+    // Обработчики для открытия/закрытия выпадающего меню
+    colorIndicator.addEventListener('click', () => {
+        toggleColorDropdown(dropdown, colorIndicator);
+    });
+    
+    colorText.addEventListener('input', (e) => {
+        const color = e.target.value;
+        if (/^#[0-9A-Fa-f]{6}$/.test(color)) {
+            selectColor(color, colorIndicator, colorText, hiddenInput, path);
+        }
+    });
+    
+    dropdownHeader.querySelector('.color-dropdown-close').addEventListener('click', () => {
+        dropdown.classList.remove('active');
+    });
+    
+    // Закрытие при клике вне элемента
+    document.addEventListener('click', (e) => {
+        if (!colorPickerWrapper.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+    
+    colorPickerWrapper.appendChild(colorIndicator);
+    colorPickerWrapper.appendChild(colorText);
+    colorPickerWrapper.appendChild(hiddenInput);
+    colorPickerWrapper.appendChild(dropdown);
+    
+    container.appendChild(colorPickerWrapper);
+    
+    // Устанавливаем начальное значение
+    if (schema.default) {
+        selectColor(schema.default, colorIndicator, colorText, hiddenInput, path);
+    }
+}
+
+// Выбор цвета
+function selectColor(color, indicator, textInput, hiddenInput, path) {
+    indicator.style.backgroundColor = color;
+    textInput.value = color;
+    hiddenInput.value = color;
+    
+    updateFormData(path, color);
+    updateConditionalFields(path, color);
+    
+    // Генерируем событие для 1С
+    const event = new Event('ПриНажатии', { bubbles: true });
+    hiddenInput.dispatchEvent(event);
+}
+
+// Переключение выпадающего меню цвета
+function toggleColorDropdown(dropdown, indicator) {
+    const isActive = dropdown.classList.contains('active');
+    
+    // Закрываем все другие выпадающие меню
+    document.querySelectorAll('.color-dropdown.active').forEach(d => {
+        d.classList.remove('active');
+    });
+    
+    if (!isActive) {
+        // Позиционируем выпадающее меню относительно индикатора
+        const indicatorRect = indicator.getBoundingClientRect();
+        const dropdownHeight = 400; // Примерная высота выпадающего меню
+        
+        // Добавляем в body для правильного позиционирования
+        document.body.appendChild(dropdown);
+        dropdown.style.position = 'fixed';
+        dropdown.style.zIndex = '1000';
+        
+        // Определяем позицию (вверх или вниз)
+        if (indicatorRect.bottom + dropdownHeight > window.innerHeight) {
+            // Показываем вверх
+            dropdown.style.top = `${indicatorRect.top - dropdownHeight}px`;
+        } else {
+            // Показываем вниз
+            dropdown.style.top = `${indicatorRect.bottom}px`;
+        }
+        
+        dropdown.style.left = `${indicatorRect.left}px`;
+        dropdown.style.width = `${indicatorRect.width}px`;
+        dropdown.classList.add('active');
+    }
+}
+
+// Переключение сворачивания
+function toggleCollapse(container) {
+    const content = container.querySelector('.object-content, .array-content');
+    const toggle = container.querySelector('.collapse-toggle');
+    
+    if (content.classList.contains('collapsed')) {
+        content.classList.remove('collapsed');
+        toggle.classList.remove('collapsed');
+        toggle.innerHTML = '▼';
+        container.classList.remove('collapsed');
+    } else {
+        content.classList.add('collapsed');
+        toggle.classList.add('collapsed');
+        toggle.innerHTML = '▶';
+        container.classList.add('collapsed');
+    }
+}
+
+// Обновление данных формы
+function updateFormData(path, value) {
+    setNestedValue(formData, path, value);
+}
+
+// Установка вложенного значения
+function setNestedValue(obj, path, value) {
+    const pathParts = path.split('.');
+    let current = obj;
+    
+    for (let i = 0; i < pathParts.length - 1; i++) {
+        const part = pathParts[i];
+        if (!current[part]) {
+            current[part] = {};
+        }
+        current = current[part];
+    }
+    
+    current[pathParts[pathParts.length - 1]] = value;
+}
+
+// Получение вложенного значения
+function getNestedValue(obj, path) {
+    const pathParts = path.split('.');
+    let current = obj;
+    
+    for (const part of pathParts) {
+        if (part.includes('[') && part.includes(']')) {
+            const arrayName = part.split('[')[0];
+            const index = parseInt(part.split('[')[1].split(']')[0]);
+            current = current[arrayName] && current[arrayName][index];
+        } else {
+            current = current[part];
+        }
+        
+        if (current === undefined) {
+            return undefined;
+        }
+    }
+    
+    return current;
+}
+
+// Проверка видимости поля
+function isFieldVisible(schema, path) {
+    if (!schema.visibleIf) {
+        return true; // Поле всегда видимо если нет условия
+    }
+    
+    // Проверяем каждое условие в visibleIf
+    for (const [fieldPath, allowedValues] of Object.entries(schema.visibleIf)) {
+        const currentValue = getFieldValue(fieldPath);
+        if (!allowedValues.includes(currentValue)) {
+            return false; // Поле не видимо если условие не выполнено
+        }
+    }
+    
+    return true; // Все условия выполнены
+}
+
+// Получение значения поля
+function getFieldValue(fieldPath) {
+    return formData[fieldPath] || '';
+}
+
+// Проверка, является ли поле условным
+function isConditionalField(path) {
+    if (!currentSchema || !currentSchema.if || !currentSchema.then) {
+        return false;
+    }
+    
+    const condition = currentSchema.if.properties;
+    if (!condition) {
+        return false;
+    }
+    
+    // Проверяем, есть ли поле в условии
+    return Object.keys(condition).some(field => path.includes(field));
+}
+
+// Проверка выполнения условия
+function isConditionMet(path) {
+    if (!currentSchema || !currentSchema.if || !currentSchema.then) {
+        return true;
+    }
+    
+    const condition = currentSchema.if.properties;
+    if (!condition) {
+        return true;
+    }
+    
+    // Проверяем каждое условие
+    for (const [field, fieldCondition] of Object.entries(condition)) {
+        const fieldValue = getNestedValue(formData, field);
+        
+        if (fieldCondition.enum && !fieldCondition.enum.includes(fieldValue)) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+// Проверка обязательности поля
+function isRequiredField(schema, path) {
+    if (!currentSchema || !currentSchema.required) {
+        return false;
+    }
+    
+    // Базовая проверка обязательности
+    const baseRequired = currentSchema.required.includes(path);
+    
+    // Проверка условной обязательности через if/then/else
+    if (currentSchema.then && currentSchema.then.required && isConditionMet(path)) {
+        return currentSchema.then.required.includes(path);
+    }
+    
+    return baseRequired;
+}
+
+// Инициализация условных полей
+function initializeConditionalFields(schema) {
+    // Инициализируем видимость полей с visibleIf
+    if (schema.properties) {
+        Object.keys(schema.properties).forEach(fieldName => {
+            const fieldSchema = schema.properties[fieldName];
+            if (fieldSchema.visibleIf) {
+                const formGroup = document.querySelector(`#field-${fieldName}`).closest('.form-group');
+                if (formGroup) {
+                    const isVisible = isFieldVisible(fieldSchema, fieldName);
+                    formGroup.style.display = isVisible ? 'flex' : 'none';
+                    if (isVisible) {
+                        formGroup.removeAttribute('data-conditional');
+                    } else {
+                        formGroup.setAttribute('data-conditional', 'true');
+                    }
+                }
+            }
+        });
+    }
+}
+
+// Обновление условных полей
+function updateConditionalFields(changedField, newValue) {
+    // Обновляем видимость полей с visibleIf
+    updateVisibleFields();
+    
+    // Обновляем обязательность полей через if/then/else
+    const conditionalElements = document.querySelectorAll('[data-conditional="true"]');
+    
+    conditionalElements.forEach(element => {
+        const path = element.getAttribute('data-path');
+        
+        // Проверяем, связано ли это поле с измененным полем через if/then/else
+        if (affectsCondition(changedField)) {
+            const conditionMet = isConditionMet(path);
+            
+            if (conditionMet) {
+                element.style.display = 'flex'; // Assuming flex display for visible fields
+            } else {
+                element.style.display = 'none';
+                // Очищаем значение скрытого поля
+                const input = element.querySelector('input, select');
+                if (input) {
+                    input.value = '';
+                    updateFormData(input.id.replace('field-', '').replace(/-/g, '.'), '');
+                }
+            }
+        }
+    });
+}
+
+// Обновление видимых полей
+function updateVisibleFields() {
+    // Обновляем видимость полей с visibleIf
+    if (!currentSchema || !currentSchema.properties) {
+        return;
+    }
+    
+    Object.keys(currentSchema.properties).forEach(fieldName => {
+        const schema = currentSchema.properties[fieldName];
+        if (schema.visibleIf) {
+            // Ищем элемент по имени поля
+            const formGroup = document.querySelector(`#field-${fieldName}`).closest('.form-group');
+            if (formGroup) {
+                const isVisible = isFieldVisible(schema, fieldName);
+                formGroup.style.display = isVisible ? 'flex' : 'none';
+                
+                // Очищаем значение если поле скрыто
+                if (!isVisible) {
+                    const input = formGroup.querySelector('input, select');
+                    if (input) {
+                        input.value = '';
+                        updateFormData(fieldName, '');
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Проверяет, влияет ли изменение поля на условия
+function affectsCondition(changedField) {
+    if (!currentSchema || !currentSchema.if || !currentSchema.if.properties) {
+        return false;
+    }
+    
+    return Object.keys(currentSchema.if.properties).includes(changedField);
+}
+
+// Валидация и обновление поля
+function validateAndUpdate(input, path, value, schema) {
+    updateFormData(path, value);
+    updateConditionalFields(path, value);
+    
+    // Валидация обязательных полей
+    const isRequired = isRequiredField(schema, path);
+    if (isRequired && !value) {
+        input.classList.add('error');
+        let errorDiv = input.parentNode.querySelector('.error-message');
+        if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            input.parentNode.appendChild(errorDiv);
+        }
+        errorDiv.textContent = 'Это поле обязательно для заполнения';
+    } else {
+        input.classList.remove('error');
+        const errorDiv = input.parentNode.querySelector('.error-message');
+        if (errorDiv) errorDiv.remove();
+    }
+}
+
+// Обновление данных массива
+function updateArrayData(arrayPath) {
+    const container = document.getElementById(`array-${arrayPath.replace(/\./g, '-')}`);
+    const items = container.querySelectorAll('.array-item');
+    const arrayData = [];
+    
+    items.forEach((item, index) => {
+        const itemPath = `${arrayPath}[${index}]`;
+        const value = getNestedValue(formData, itemPath);
+        if (value !== undefined) {
+            arrayData.push(value);
+        }
+    });
+    
+    setNestedValue(formData, arrayPath, arrayData);
+}
+
+// Добавление кнопки экспорта
+function addExportButton(container) {
+    const exportBtn = document.createElement('button');
+    exportBtn.className = 'export-btn';
+    exportBtn.textContent = 'Экспортировать JSON';
+    exportBtn.onclick = () => exportJSON();
+    container.appendChild(exportBtn);
+    
+    const outputDiv = document.createElement('div');
+    outputDiv.id = 'jsonOutput';
+    outputDiv.className = 'json-output';
+    outputDiv.style.display = 'none';
+    container.appendChild(outputDiv);
+}
+
+// Экспорт JSON
+function exportJSON() {
+    // Проверяем валидность всех обязательных полей
+    if (!validateAllRequiredFields()) {
+        return;
+    }
+    
+    const outputDiv = document.getElementById('jsonOutput');
+    const jsonString = JSON.stringify(formData, null, 2);
+    outputDiv.textContent = jsonString;
+    outputDiv.style.display = 'block';
+    
+    return jsonString;
+}
+
+// Валидация всех обязательных полей
+function validateAllRequiredFields() {
+    let isValid = true;
+    
+    if (!currentSchema || !currentSchema.properties) {
+        return true;
+    }
+    
+    Object.keys(currentSchema.properties).forEach(fieldName => {
+        const fieldSchema = currentSchema.properties[fieldName];
+        const isRequired = isRequiredField(fieldSchema, fieldName);
+        
+        if (isRequired) {
+            const value = getNestedValue(formData, fieldName);
+            
+            if (!value || (Array.isArray(value) && value.length === 0)) {
+                isValid = false;
+                
+                // Показываем ошибку
+                const input = document.getElementById(`field-${fieldName}`);
+                if (input) {
+                    input.classList.add('error');
+                    let errorDiv = input.parentNode.querySelector('.error-message');
+                    if (!errorDiv) {
+                        errorDiv = document.createElement('div');
+                        errorDiv.className = 'error-message';
+                        input.parentNode.appendChild(errorDiv);
+                    }
+                    errorDiv.textContent = 'Это поле обязательно для заполнения';
+                }
+            }
+        }
+    });
+    
+    if (!isValid) {
+        alert('Пожалуйста, заполните все обязательные поля перед экспортом.');
+    }
+    
+    return isValid;
+}
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', initSchemaForm);

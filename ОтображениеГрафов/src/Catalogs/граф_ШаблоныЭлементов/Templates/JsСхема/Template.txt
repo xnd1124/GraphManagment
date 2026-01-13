@@ -1,0 +1,133 @@
+window.defaultSchema = {
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Уникальный идентификатор ячейки",
+      "minLength": 1
+    },
+    "shape": {
+      "type": "string",
+      "enum": ["rect", "circle", "ellipse", "polygon", "path", "image", "html"],
+      "widget": "select",
+      "description": "Тип фигуры",
+      "default": "rect"
+    },
+    "x": {
+      "type": "number",
+      "description": "Координата X",
+      "minimum": 0
+    },
+    "y": {
+      "type": "number",
+      "description": "Координата Y",
+      "minimum": 0
+    },
+    "width": {
+      "type": "number",
+      "description": "Ширина",
+      "minimum": 1,
+      "visibleIf": {
+        "shape": ["rect", "circle"]
+      }
+    },
+    "height": {
+      "type": "number",
+      "description": "Высота",
+      "minimum": 1,
+      "visibleIf": {
+        "shape": ["rect", "circle"]
+      }
+    },
+    "visible": {
+      "type": "boolean",
+      "description": "Видимость ячейки",
+      "default": true
+    },
+    "attrs": {
+      "type": "object",
+      "description": "Стили элементов ячейки",
+      "properties": {
+        "body": {
+          "type": "object",
+          "description": "Стили для основного элемента",
+          "properties": {
+            "fill": {
+              "type": "string",
+              "description": "Цвет заливки",
+              "format": "color"
+            },
+            "stroke": {
+              "type": "string",
+              "description": "Цвет границы",
+              "format": "color"
+            },
+            "strokeWidth": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Толщина границы"
+            }
+          }
+        },
+        "label": {
+          "type": "object",
+          "description": "Стили для текста",
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "Текст"
+            },
+            "fill": {
+              "type": "string",
+              "description": "Цвет текста",
+              "format": "color"
+            },
+            "fontSize": {
+              "type": "number",
+              "minimum": 1,
+              "description": "Размер шрифта"
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "description": "Бизнес данные ячейки",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["node", "edge", "group"],
+          "description": "Тип данных"
+        },
+        "category": {
+          "type": "string",
+          "description": "Категория элемента"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Теги элемента"
+        }
+      }
+    },
+    "zIndex": {
+      "type": "integer",
+      "description": "Z-индекс для порядка отрисовки",
+      "minimum": 0
+    }
+  },
+  "required": ["id", "shape", "x", "y"],
+  "if": {
+    "properties": {
+      "shape": {
+        "enum": ["rect", "circle"]
+      }
+    }
+  },
+  "then": {
+    "required": ["width", "height"]
+  }
+};

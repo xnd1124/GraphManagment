@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>X6 Graph with Local Data</title>
+    <style>
+        /* ВАЖНО: Убираем отступы у body, чтобы контейнер точно следовал за окном */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* Убираем полосы прокрутки самого окна */
+        }
+
+        #container {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script src="x6.js"></script>
+    <script src="data.js"></script>
+
+    <script>
+        window.onload = () => {
+            const container = document.getElementById('container');
+
+            const graph = new X6.Graph({
+                container: container,
+                autoResize: true,
+            });
+
+            graph.fromJSON(graphData);
+            graph.centerContent();
+
+            let resizeTimer;
+
+            window.addEventListener('resize', () => {
+                // Очищаем таймер, если окно всё еще двигается
+                clearTimeout(resizeTimer);
+
+                // Устанавливаем новый таймер на 100 мс
+                resizeTimer = setTimeout(() => {
+                    const width = window.innerWidth;
+                    const height = window.innerHeight;
+
+                    graph.resize(width, height);
+                    // 2. Масштабируем граф, чтобы он вписался в экран
+                    graph.zoomToFit({
+                        padding: 20,       // Отступ от краев (в пикселях), чтобы узлы не прилипали к границам
+                        maxScale: 1,        // Ограничение: не увеличивать граф больше его реального размера (100%)
+                    });
+
+                    // 3. Плавно центрируем результат
+                    graph.centerContent({
+                        animation: {
+                            duration: 300, // Анимация длительностью 300мс для приятного визуального эффекта
+                        },
+                    });
+
+                    console.log(`Контент вписан в область: ${width}x${height}`);
+                }, 100);
+            });
+        };
+
+    </script>
+</body>
+
+</html>

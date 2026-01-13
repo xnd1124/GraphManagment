@@ -46,15 +46,15 @@
   <subsystems>Subsystem.граф_ОтображениеГрафов</subsystems>
   <commonPictures>CommonPicture.граф_ИконкаПодсистемы</commonPictures>
   <roles>Role.граф_ОсновнаяРоль</roles>
-  <commonTemplates>CommonTemplate.граф_БиблиотекаG6Версия4</commonTemplates>
-  <commonTemplates>CommonTemplate.граф_ШаблонHTML</commonTemplates>
-  <commonTemplates>CommonTemplate.граф_СкриптИнициализацииГрафа</commonTemplates>
+  <commonTemplates>CommonTemplate.граф_HTMLШаблонЭлемента</commonTemplates>
+  <commonTemplates>CommonTemplate.граф_БиблиотекаX6</commonTemplates>
   <commonModules>CommonModule.граф_РаботаСТекстомКлиентСервер</commonModules>
   <commonModules>CommonModule.граф_БиблиотекаG6Клиент</commonModules>
   <commonModules>CommonModule.граф_МакетыВызовСервера</commonModules>
   <commonModules>CommonModule.граф_ФормированиеГрафа</commonModules>
-  <catalogs>Catalog.граф_ТипыОформленийЭлементовГрафов</catalogs>
-  <catalogs>Catalog.граф_ОформленияЭлементовГрафа</catalogs>
+  <commonModules>CommonModule.граф_РаботаСФайламиКлиент</commonModules>
+  <catalogs>Catalog.граф_ШаблоныЭлементов</catalogs>
+  <catalogs>Catalog.граф_ОформленияШаблонов</catalogs>
   <catalogs>Catalog.граф_ИсточникиДанныхГрафов</catalogs>
   <catalogs>Catalog.граф_ОписанияГрафов</catalogs>
   <enums>Enum.граф_КомпонентыГрафа</enums>

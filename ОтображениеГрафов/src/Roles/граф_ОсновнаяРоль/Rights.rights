@@ -4,7 +4,7 @@
 	<setForAttributesByDefault>true</setForAttributesByDefault>
 	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
 	<object>
-		<name>Catalog.граф_ТипыОформленийЭлементовГрафов</name>
+		<name>Catalog.граф_ШаблоныЭлементов</name>
 		<right>
 			<name>Delete</name>
 			<value>false</value>

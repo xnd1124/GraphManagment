@@ -26,23 +26,12 @@
       <value>Ребро</value>
     </synonym>
   </enumValues>
-  <enumValues uuid="1a5b9e3b-ecca-4edc-9df0-1639d86909a0">
-    <name>Контейнер</name>
-    <synonym>
-      <key>ru</key>
-      <value>Контейнер (группа вершин)</value>
-    </synonym>
-  </enumValues>
   <templates uuid="3d708e44-bd93-45bc-96d3-6f692c1f600c">
     <name>ШаблонРеброПоУмолчанию</name>
     <templateType>TextDocument</templateType>
   </templates>
   <templates uuid="0ac60b16-3c7e-4252-b06b-705e501bba30">
     <name>ШаблонВершинаПоУмолчанию</name>
-    <templateType>TextDocument</templateType>
-  </templates>
-  <templates uuid="f9044681-7eb9-44e7-9d1d-65fd22f4886f">
-    <name>ШаблонКонтейнерПоУмолчанию</name>
     <templateType>TextDocument</templateType>
   </templates>
 </mdclass:Enum>

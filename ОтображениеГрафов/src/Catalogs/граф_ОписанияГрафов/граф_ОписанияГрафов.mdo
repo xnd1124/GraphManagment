@@ -181,7 +181,7 @@
         <value>Оформление</value>
       </synonym>
       <type>
-        <types>CatalogRef.граф_ОформленияЭлементовГрафа</types>
+        <types>CatalogRef.граф_ОформленияШаблонов</types>
         <types>String</types>
         <stringQualifiers>
           <length>200</length>
@@ -258,7 +258,7 @@
         <value>Оформление</value>
       </synonym>
       <type>
-        <types>CatalogRef.граф_ОформленияЭлементовГрафа</types>
+        <types>CatalogRef.граф_ОформленияШаблонов</types>
         <types>String</types>
         <stringQualifiers>
           <length>200</length>
